@@ -1,6 +1,9 @@
 # `sudo:false` for faster builds.
 sudo: false
 language: node_js
+cache:
+  directories:
+    - "node_modules"
 
 # The tests are broken, so we skip it for now
 # Needed for Firefox
