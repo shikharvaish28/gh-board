@@ -11,6 +11,11 @@ language: node_js
 script:
   - script/build.sh
 
+notifications:
+  email: false
+  webhooks: https://www.travisbuddy.com/
+  on_success: never
+
 # Remove /dist/ from .gitignore
 before_deploy:
   - sed -i '/\/dist\//d' ./.gitignore
