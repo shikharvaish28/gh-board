@@ -345,8 +345,6 @@ const FilterDropdownShell = React.createClass({
     if (repoInfos.length) {
       const [{repoOwner, repoName}] = repoInfos;
 
-      // TODO: Poll all of these so we get updates
-      // TODO: Include *all* labels, not just the ones in the primary repo
       const milestones = IssueStore.fetchMilestones(repoOwner, repoName);
       const labels = IssueStore.fetchLabels(repoOwner, repoName);
       const promise = Promise.all([milestones, labels]);

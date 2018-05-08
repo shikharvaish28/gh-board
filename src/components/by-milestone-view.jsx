@@ -64,7 +64,7 @@ const KanbanColumn = React.createClass({
         </div>
       );
     } else {
-      return null; // TODO: Maybe the panel should say "No Issues" (but only if it's the only column)
+      return null;
     }
 
   }
