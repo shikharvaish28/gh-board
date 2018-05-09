@@ -32,7 +32,9 @@ module.exports = {
               'env'
             ],
             plugins: [
-              'transform-object-rest-spread'
+              'react-require',
+              'transform-object-rest-spread',
+              'transform-class-properties'
             ],
           }
         },

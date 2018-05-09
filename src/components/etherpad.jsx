@@ -1,4 +1,4 @@
-import React from 'react';
+import createReactClass from 'create-react-class';
 import * as BS from 'react-bootstrap';
 import EtherpadClient from 'etherpad-lite-client';
 import {Link} from 'react-router';
@@ -12,7 +12,7 @@ import {getFilters} from '../route-utils';
 import Loadable from './loadable';
 import GithubFlavoredMarkdown from './gfm';
 
-const EtherpadInner = React.createClass({
+const EtherpadInner = createReactClass({
   getDefaultProps() {
     return {
       hostName: 'https://openstax-pad.herokuapp.com',
@@ -134,7 +134,7 @@ const EtherpadInner = React.createClass({
   }
 });
 
-const Etherpad = React.createClass({
+const Etherpad = createReactClass({
   renderLoaded() {
     const {title, padName, getBody, saveBody, loadBody, repoOwner, repoName} = this.props;
     return (
