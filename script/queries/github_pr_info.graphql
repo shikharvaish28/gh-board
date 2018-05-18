@@ -1,6 +1,6 @@
 query($owner: String!, $name: String!, $before: String) {
   repository(owner:$owner, name:$name) {
-    pullRequests(last:100, before:$before) {
+    pullRequests(last:30, before:$before) {
       pageInfo {
         startCursor
         hasPreviousPage
@@ -11,8 +11,53 @@ query($owner: String!, $name: String!, $before: String) {
         url
         number
         state
-        comments {
+        reviews(first: 20) {
           totalCount
+          nodes {
+            comments(first: 100) {
+              totalCount
+              nodes {
+                id
+                url
+                bodyText
+                diffHunk
+                createdAt
+                lastEditedAt
+                author {
+                  login
+                  avatarUrl
+                  ... on User {
+                    name
+                  }
+                }
+                reactionGroups {
+                  content
+                  createdAt
+                }
+              }
+            }
+          }
+        }
+        comments(first:100) {
+          totalCount
+          nodes {
+            id
+            url
+            bodyText
+            createdAt
+            lastEditedAt
+            author {
+              login
+              avatarUrl
+              ... on User {
+                name
+              }
+            }
+            reactionGroups {
+              content
+              createdAt
+            }
+          }
         }
         milestone {
           title

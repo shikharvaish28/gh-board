@@ -1,11 +1,13 @@
 const fs = require('fs');
 const moment = require('moment');
 const GraphQL = require('graphql-client');
+const sleep = require('sleep');
 
 const {
   GITHUB_ISSUE_INFO_QUERY,
   GITHUB_PR_INFO_QUERY,
-  GITHUB_LABEL_INFO_QUERY
+  GITHUB_LABEL_INFO_QUERY,
+  GITHUB_REACTION_INFO_QUERY
 } = require('./queries');
 
 const GH_GQL_BASE = 'https://api.github.com/graphql';
@@ -18,12 +20,27 @@ const GH_GQL_OPTIONS = {
 
 const client = GraphQL(GH_GQL_OPTIONS);
 
-// number of pages we want to query (default: 20 pages x 100 items)
+// number of pages we want to query
 // if PAGE_THRESHOLD is -1, then fetch all issues/PRs
-const pageThreshold = process.env.PAGE_THRESHOLD || 20;
+const pageThreshold = process.env.PAGE_THRESHOLD || -1;
 console.log('page number threshold:', pageThreshold);
 
+// earliest date we want to query from
+// GitHub supports reactions since 2016-03-10
+const earliestDate = process.env.EARLIEST_DATE || '2017-01-01T00:00:00Z';
+
 const repo = process.env.REPOSITORIES;
+
+// review will be ignored if it's written by any author specified here
+// delimiter: space
+const ignoreReviewAuthor = process.env.IGNORE_REVIEW_AUTHOR ||
+  'gitmate-bot rultor';
+
+// review will be ignored if it matches any string specified here
+// it can be a literal or a regular expression
+// delimiter: space
+const ignoreReviewContent = process.env.IGNORE_REVIEW_CONTENT ||
+  '@gitmate-bot @rultor /^(unack|ack)/g';
 
 if (!repo) {
   console.log('No repositories to cache. Skipping.');
@@ -37,21 +54,54 @@ console.log('Fetching issues data for', repoOwner, repoNames);
 
 const getTime = timeString => moment(timeString).toDate().getTime();
 
-async function fetchNextPage(owner, name, isIssue, data, cursor, pageCount) {
+async function fetchReactionsOfPR(owner, name, number, reviewCnt,
+  maxCommentsPerReview, commentCnt) {
+  let data, errors;
+  try {
+    ({ data, errors } = await client.query(
+      GITHUB_REACTION_INFO_QUERY,
+      {owner, name, number, reviewCnt, maxCommentsPerReview, commentCnt}
+    ));
+  } catch (error) {
+    console.log('fetch reactions of pr failed, owner:', owner,
+      'name:', name, 'number:', number, 'error:', error);
+  }
+
+  let rawComments = null;
+  if (data) {
+    // collect review comments
+    rawComments = data.repository.pullRequest.reviews.nodes.map(
+      node => node.comments.nodes);
+    rawComments = [].concat.apply([], rawComments);
+    // collect issue comments
+    rawComments = rawComments.concat(
+      data.repository.pullRequest.comments.nodes);
+  } else {
+    console.log('warning: no available reaction data!',
+      'owner:', owner, 'name:', name, 'pull request number:', number,
+      'reviewCnt:', reviewCnt, 'maxCommentsPerReview', maxCommentsPerReview,
+      'commentCnt', commentCnt, 'error:', errors);
+  }
+  // reactions are wrapped by corresponding comment
+  return rawComments;
+};
+
+async function fetchNextPage(owner, name, isIssue, data, cursor,
+  pageCount, warningCnt) {
   // fetch data of next page
   console.log('owner:', owner, 'name:', name, 'isIssue:', isIssue,
     'cursor:', cursor, 'page count:', pageCount);
 
-  let nextData = null, hasPreviousPage = false;
-  pageCount++;
+  let nextData = null, hasPreviousPage = false, reachDateThreshold = false;
+  let errors = null;
   try {
     if (isIssue) {
-      ({ data: nextData } = await client.query(
+      ({ data: nextData, errors } = await client.query(
         GITHUB_ISSUE_INFO_QUERY,
         {owner, name, before: cursor}
       ));
     } else {
-      ({ data: nextData } = await client.query(
+      ({ data: nextData, errors } = await client.query(
         GITHUB_PR_INFO_QUERY,
         {owner, name, before: cursor}
       ));
@@ -61,6 +111,7 @@ async function fetchNextPage(owner, name, isIssue, data, cursor, pageCount) {
       'cursor:', cursor, 'error:', error);
   }
   if (nextData && nextData.repository) {
+    pageCount++;
     let nodes = [];
     if (isIssue) {
       ({ nodes, pageInfo } = nextData.repository.issues);
@@ -69,8 +120,11 @@ async function fetchNextPage(owner, name, isIssue, data, cursor, pageCount) {
     }
     cursor = pageInfo.startCursor;
     hasPreviousPage = pageInfo.hasPreviousPage;
-    const result = nodes.map(node => {
+    const result = await Promise.all(nodes.map(async node => {
       let user, assignee, milestone;
+      if (getTime(node.createdAt) < getTime(earliestDate)) {
+        reachDateThreshold = true;
+      }
 
       if (node.author) {
         user = {
@@ -90,10 +144,7 @@ async function fetchNextPage(owner, name, isIssue, data, cursor, pageCount) {
           avatarUrl: node.assignees.nodes[0].avatarUrl
         };
       } else {
-        assignee = {
-          login: null,
-          avatarUrl: null
-        };
+        assignee = null;
       }
 
       if (node.milestone) {
@@ -141,23 +192,126 @@ async function fetchNextPage(owner, name, isIssue, data, cursor, pageCount) {
         }
       };
       if (!isIssue) {
-        info.pullRequest = {
-          htmlUrl: node.url
+        let rawComments, comments;
+        // collect review comments
+        rawComments = node.reviews.nodes.map(node => node.comments.nodes);
+        rawComments = [].concat.apply([], rawComments);
+        // collect issue comments
+        rawComments = rawComments.concat(node.comments.nodes);
+
+        // fetch reactions only if there are reactions within that PR
+        // to reduce API hits.
+        // trick: a comment has received reaction(s) iff
+        // reactionGroup.createdAt attribute is not null
+        const hasReactions = rawComments.reduce((has, rawComment) => {
+          return has || rawComment.reactionGroups.reduce((flag, node) => {
+            return (flag || node.createdAt) ? true : false;
+          }, false);
+        }, false);
+
+        if (hasReactions) {
+          console.log('pull request has reactions. repoOwner:', owner,
+            'repoName:', name, 'pullRequest number:', node.number);
+          const number = node.number;
+          const reviewCnt = Math.min(node.reviews.totalCount, 20);
+          const maxCommentsPerReview = Math.min(
+            node.reviews.nodes.reduce(
+              (max, review) => Math.max(max, review.comments.totalCount), 0),
+            100);
+          const commentCnt = Math.min(node.comments.totalCount, 100);
+          const commentsWithReactions = await fetchReactionsOfPR(owner, name,
+            number, reviewCnt, maxCommentsPerReview, commentCnt);
+
+          // merge rawComments with commentsWithReactions
+          if (commentsWithReactions && commentsWithReactions.length) {
+            rawComments.forEach((comment, index) => {
+              if (comment.id !== commentsWithReactions[index].id) {
+                console.log('warning: comments and reactions do not fit!',
+                  'pr number:', number, 'comment.id:', comment.id,
+                  'comment with reactions id:', commentsWithReactions[index].id);
+              } else {
+                comment.reactions = commentsWithReactions[index].reactions;
+              }
+            });
+          }
+        }
+
+        // filter out useless reviews
+        rawComments = rawComments.filter(node => {
+          let flag = true;
+          // filter comments that don't need meta-reviews
+          for (const ignoreContent of ignoreReviewContent.split(' ')) {
+            if (node.bodyText.match(ignoreContent)) {
+              // filter reviews with specific content
+              flag = false;
+            }
+          }
+          for (const ignoreAuthor of ignoreReviewAuthor.split(' ')) {
+            if (node.author && node.author.login === ignoreAuthor) {
+              // filter reviews done by specific authors
+              flag = false;
+            }
+          }
+          return flag;
+        });
+
+        comments = rawComments.map(node => {
+          let commentAuthor, reactions;
+
+          if (node.author) {
+            commentAuthor = {
+              login: node.author.login,
+              avatarUrl: node.author.avatarUrl,
+              name: node.author.name
+            };
+          } else {
+            commentAuthor = {
+              login: null,
+              avatarUrl: null
+            };
+          }
+
+          if (node.reactions) reactions = node.reactions.nodes;
+
+          return {
+            id: node.id,
+            url: node.url,
+            bodyText: node.bodyText,
+            diffHunk: node.diffHunk ? node.diffHunk : null,
+            author: commentAuthor,
+            reactions,
+            createdAt: node.createdAt,
+            lastEditedAt: node.lastEditedAt,
+            updatedAt: node.lastEditedAt ? node.lastEditedAt : node.createdAt
+          };
+        });
+        info.issue.pullRequest = {
+          htmlUrl: node.url,
+          comments
         };
       }
       return info;
-    });
+    }));
     data = data.concat(result);
-    if (hasPreviousPage && (pageCount < pageThreshold || pageThreshold == -1)) {
+    if (hasPreviousPage && !reachDateThreshold &&
+       (pageCount < pageThreshold || pageThreshold == -1)) {
       return fetchNextPage(owner, name, isIssue, data,
-        cursor, pageCount);
+        cursor, pageCount, 0);
     } else {
       return data;
     }
   } else {
     console.log('Warning: no available data. owner:', owner, 'name:', name,
-      'isIssue:', isIssue, 'pageCount:', pageCount);
-    return data;
+      'isIssue:', isIssue, 'pageCount:', pageCount, 'error message:', errors);
+    warningCnt += 1;
+    sleep.sleep(3);
+    if (warningCnt < 15) {
+      console.log('warning count:', warningCnt);
+      return fetchNextPage(owner, name, isIssue, data, cursor, pageCount, warningCnt);
+    } else {
+      console.log('number of warning exceeds threshold (15), stop fetching on this repo');
+      return data;
+    }
   }
 }
 
@@ -166,7 +320,7 @@ async function fetchIssue(owner, names, isIssue) {
   for (const name of names) {
     try {
       result = result.concat(
-        await fetchNextPage(owner, name, isIssue, [], null, 0));
+        await fetchNextPage(owner, name, isIssue, [], null, 0, 0));
     } catch (error) {
       console.log('repo owner:', owner, 'repo name:', name,
         'is issue:', isIssue, 'error:', error);
@@ -223,24 +377,47 @@ function generateRepoInfo(owner, names, issues) {
   return result;
 }
 
+function filterRecent(issues) {
+  // only keep issues created/updated in the past month
+  const today = new Date();
+  const dayLastMonth = getTime(today.setMonth(today.getMonth() - 1));
+  return issues.filter(issue => dayLastMonth < issue.updatedAtMs);
+}
+
 ;(async () => {
   let issueInfo, prInfo, labelInfo;
   try {
-    // Don't fetch them concurrently, otherwise some queries may fail 
-    issueInfo = await fetchIssue(repoOwner, repoNames, true);
-    prInfo = await fetchIssue(repoOwner, repoNames, false); 
-    labelInfo = await fetchLabel(repoOwner, repoNames); 
+    [issueInfo, labelInfo, prInfo] = await Promise.all([
+      fetchIssue(repoOwner, repoNames, true),
+      fetchLabel(repoOwner, repoNames),
+      fetchIssue(repoOwner, repoNames, false)
+    ]);
   } catch (error) {
     console.log(error);
   };
   const issues = issueInfo.concat(prInfo);
+  const repositories = generateRepoInfo(repoOwner, repoNames, issues);
   const result = {
-    issues: issues,
+    issues,
     repoLabels: labelInfo,
-    repositories: generateRepoInfo(repoOwner, repoNames, issues)
+    repositories
+  };
+  const recentResult = {
+    issues: filterRecent(issues),
+    repoLabels: labelInfo,
+    repositories
   };
 
   fs.writeFile(`${__dirname}/../issues.json`, JSON.stringify(result), err => {
     if (err) console.log(err);
   });
+
+  fs.writeFile(
+    `${__dirname}/../recent-issues.json`,
+    JSON.stringify(recentResult),
+    err => {
+      if (err) console.log(err);
+    }
+  );
+
 })();
