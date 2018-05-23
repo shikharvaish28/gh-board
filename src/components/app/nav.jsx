@@ -157,7 +157,7 @@ class AppNav extends Component {
       } else {
         repoNameItems = _.map(repoInfos, ({repoOwner, repoName}, index) => {
           const currentRepoInfos = [{repoOwner, repoName}];
-          const repoLink = buildRoute('kanban', {currentRepoInfos});
+          const repoLink = buildRoute('kanban', {repoInfos: currentRepoInfos});
           return (
             <span key={repoLink} className='repo-name-wrap'>
               {index !== 0 && '&' || null}{/* Put an & between repo names */}
