@@ -3,4 +3,4 @@
 set -e -x
 
 npm run build
-node ./script/fetch-issues.js
+NODE_ENV=development npx babel-node --presets env --plugins transform-class-properties script/fetch-issues.js
