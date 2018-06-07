@@ -15,7 +15,7 @@
   "repository": "ryanprior/gh-pages",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src --ext .js --ext .jsx",
+    "lint": "eslint src test script --ext .js --ext .jsx",
     "start": "webpack-dev-server --host 0.0.0.0 --port 8080 --hot --progress",
     "build": "npm run lint; NODE_ENV=production webpack --progress --colors",
     "dev-build": "npm run lint; webpack --progress --colors",
