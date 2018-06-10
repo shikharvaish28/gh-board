@@ -36,7 +36,7 @@ notifications:
 
 # Remove /dist/ from .gitignore
 before_deploy:
-  - sed -i '/\/dist\//d' ./.gitignore
+  - sed -i '/dist\//d' ./.gitignore
 
 deploy:
   provider: pages
