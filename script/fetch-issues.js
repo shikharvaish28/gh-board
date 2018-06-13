@@ -2,6 +2,7 @@ const fs = require('fs');
 const moment = require('moment');
 const GraphQL = require('graphql-client');
 const sleep = require('sleep');
+const { DEPLOY_PREVIEW: isDeployPreview } = require('netlify-env');
 
 const {
   GITHUB_ISSUE_INFO_QUERY,
@@ -20,6 +21,8 @@ const GH_GQL_OPTIONS = {
 
 const client = GraphQL(GH_GQL_OPTIONS);
 
+const getTime = timeString => moment(timeString).toDate().getTime();
+
 // number of pages we want to query
 // if PAGE_THRESHOLD is -1, then fetch all issues/PRs
 const pageThreshold = process.env.PAGE_THRESHOLD || -1;
@@ -27,7 +30,17 @@ console.log('page number threshold:', pageThreshold);
 
 // earliest date we want to query from
 // GitHub supports reactions since 2016-03-10
-const earliestDate = process.env.EARLIEST_DATE || '2017-01-01T00:00:00Z';
+let earliestDate = process.env.EARLIEST_DATE || '2017-01-01T00:00:00Z';
+
+if (isDeployPreview) {
+  const earliestDateForPr = process.env.EARLIEST_DATE_PR ||
+    '2018-04-01T00:00:00Z';
+  if (getTime(earliestDate) < getTime(earliestDateForPr)) {
+    earliestDate = earliestDateForPr;
+    console.log('To speed up netlify pr build, set earliest date threshold',
+      earliestDate);
+  }
+}
 
 const repo = process.env.REPOSITORIES;
 
@@ -51,8 +64,6 @@ const repoOwner = repo.split(':')[0];
 const repoNames = repo.substring(repo.indexOf(':') + 1).split('|');
 
 console.log('Fetching issues data for', repoOwner, repoNames);
-
-const getTime = timeString => moment(timeString).toDate().getTime();
 
 async function fetchReactionsOfPR(owner, name, number, reviewCnt,
   maxCommentsPerReview, commentCnt) {
