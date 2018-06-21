@@ -47,7 +47,7 @@ test('shows a repo', async t => {
   await waitUntilDoneLoading(browser);
   // Close the "Anonymous Browsing" modal
   if (!GITHUB_TOKEN) {
-    await browser.waitForExist('.modal-dialog button.close');
+    await browser.waitForExist('.modal-dialog button.close', 20 * 1000);
     await browser.click('.modal-dialog button.close');
   }
   // Verify that an Issue exists
