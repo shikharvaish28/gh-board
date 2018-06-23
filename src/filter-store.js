@@ -170,6 +170,18 @@ class Store extends EventEmitter {
     }
     return sortedCards;
   }
+
+  filterAndSortReviews(reviews) {
+    // Sort the reviews by `lastEditedAt` and then
+    // by `createdAt` (if `lastEditedAt` does not exist)
+    let sortedReviews = reviews.map(review => {
+      review.parsedUpdatedAt = Date.parse(review.updatedAt);
+      return review;
+    }).sort((a, b) => {
+      return b.parsedUpdatedAt - a.parsedUpdatedAt;
+    });
+    return sortedReviews;
+  }
 }
 
 export default new Store();

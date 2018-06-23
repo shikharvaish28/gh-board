@@ -13,7 +13,9 @@ import FilterStore from '../filter-store';
 import CurrentUserStore from '../user-store';
 import Loadable from './loadable';
 import IssueList from './issue-list';
+import ReviewList from './review-list';
 import Issue from './issue';
+import Review from './review';
 import Board from './board';
 import AnonymousModal from './anonymous-modal';
 import {titlecaps} from 'titlecaps';
@@ -68,6 +70,26 @@ function KanbanColumn(props) {
   }
 }
 
+function ReviewColumn(props) {
+  const {reviews} = props;
+
+  const reviewComponents = _.map(reviews, (review) => {
+    return (
+      <Review
+        review={review}
+      />
+    );
+  });
+
+  return (
+    <div className='kanban-board-column'>
+      <ReviewList>
+        {reviewComponents}
+      </ReviewList>
+    </div>
+  );
+}
+
 class KanbanRepo extends Component {
   componentDidMount() {
     const repoTitle = titlecaps(this.props.repoInfos[0].repoName);
@@ -76,6 +98,24 @@ class KanbanRepo extends Component {
 
   render() {
     const {columnData, cards, repoInfos} = this.props;
+
+    // Get review comments out of cards
+    const reviews = _.flatten(cards.map((card) => {
+      if (card.issue.pullRequest && card.issue.pullRequest.comments) {
+        let comments = card.issue.pullRequest.comments;
+        return comments.map(comment => {
+          comment.repoOwner = card.repoOwner;
+          comment.repoName = card.repoName;
+          comment.number = card.number;
+          return comment;
+        });
+      } else {
+        return [];
+      }
+    }));
+
+    // filter and sort review comments
+    const sortedReviews = FilterStore.filterAndSortReviews(reviews);
 
     // Get the primary repoOwner and repoName
     const [primaryRepo] = repoInfos;
@@ -118,6 +158,7 @@ class KanbanRepo extends Component {
     return (
       <div className='kanban-board'>
         {kanbanColumns}
+        <ReviewColumn reviews={sortedReviews}/>
         {/* addCardList */}
         <AnonymousModal/>
       </div>
