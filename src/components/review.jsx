@@ -9,10 +9,11 @@ import GithubFlavoredMarkdown from './gfm';
 import Time from './time';
 import ReviewBlurb from './review-blurb';
 import IssueOrPullRequestBlurb from './issue-blurb';
+import Reactions from './reactions';
 
 function ReviewCard(props) {
   const {card, primaryRepoName} = props;
-  const {repoOwner, repoName, number, id, bodyText, url} = card;
+  const {repoOwner, repoName, number, id, bodyText, reactions, url} = card;
 
   const key = `${repoOwner}/${repoName}#${number}-${id}`;
 
@@ -65,6 +66,18 @@ function ReviewCard(props) {
       primaryRepoName={primaryRepoName} />,
   ];
 
+  let reactionsStat = {
+    THUMBS_UP: 0,
+    THUMBS_DOWN: 0,
+    LAUGH: 0,
+    HOORAY: 0,
+    HEART: 0,
+    CONFUSED: 0
+  };
+  if (reactions) {
+    reactions.forEach(reaction => reactionsStat[reaction.content]++);
+  }
+
   return (
     <div className='-card-and-related'>
       <BS.ListGroupItem
@@ -87,6 +100,9 @@ function ReviewCard(props) {
         </span>
 
         <span key='footer' className='review-footer'>
+          <span key='left-footer' className='comment-reactions'>
+            <Reactions stat={reactionsStat}/>
+          </span>
           <span key='right-footer' className='review-time-and-user'>
             <Time key='time' className='updated-at' dateTime={updatedAt}/>
             {assignedAvatar}
