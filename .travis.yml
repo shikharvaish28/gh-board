@@ -1,0 +1,46 @@
+# `sudo:false` for faster builds.
+sudo: false
+language: node_js
+cache:
+  directories:
+    - "node_modules"
+
+# env forces jobs to be created from the top level settings
+env:
+jobs:
+  include:
+    - stage: moban
+      language: python
+      python: 3.6
+      cache: pip
+      before_install: false
+      install: pip install moban
+      before_script: false
+      script: .ci/check_moban.sh
+      after_success: false
+
+# Needed for Firefox
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
+
+script:
+  - npm run test
+  - script/build.sh
+
+notifications:
+  email: false
+  webhooks: https://www.travisbuddy.com/
+  on_success: never
+
+# Remove /dist/ from .gitignore
+before_deploy:
+  - sed -i '/dist\//d' ./.gitignore
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master

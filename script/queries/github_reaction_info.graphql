@@ -1,0 +1,43 @@
+query($owner: String!, $name: String!, $number: Int!,
+  $reviewCnt: Int!, $maxCommentsPerReview: Int!, $commentCnt: Int!) {
+  repository(owner:$owner, name:$name) {
+    pullRequest(number: $number) {
+        reviews(first: $reviewCnt) {
+          nodes {
+            comments(first: $maxCommentsPerReview) {
+              nodes {
+                id
+                reactions(first: 100) {
+                  nodes {
+                    id
+                    createdAt
+                    content
+                    user {
+                      login
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        comments(first:$commentCnt) {
+          nodes {
+            id
+            reactions(first: 100) {
+              nodes {
+                id
+                createdAt
+                content
+                user {
+                  login
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+}
