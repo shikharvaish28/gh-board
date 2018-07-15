@@ -169,6 +169,7 @@ class Client extends EventEmitter {
   constructor() {
     super();
     this.LOW_RATE_LIMIT = 60;
+    this.setMaxListeners(20);
   }
   // Used for checking if we should retreive ALL Issues or just open ones
   canCacheLots() { return this.hasCredentials() /*&& !!cacheHandler._db*/; }

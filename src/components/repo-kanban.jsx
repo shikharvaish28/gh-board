@@ -6,6 +6,7 @@ import {ListUnorderedIcon} from 'react-octicons';
 import {getFilters} from '../route-utils';
 import {filterKanbanLabels} from '../lib/columns';
 import {UNCATEGORIZED_NAME} from '../helpers';
+import Client from '../github-client';
 import IssueStore from '../issue-store';
 import {filterCards} from '../issue-store';
 import SettingsStore from '../settings-store';
@@ -91,10 +92,27 @@ function ReviewColumn(props) {
 }
 
 class KanbanRepo extends Component {
+  state = {login: null};
+
   componentDidMount() {
     const repoTitle = titlecaps(this.props.repoInfos[0].repoName);
     document.title = `${repoTitle} Kanban Board`;
+    Client.on('changeToken', this.onChangeToken);
+    this.onChangeToken();
   }
+
+  componentWillUnmount() {
+    Client.off('changeToken', this.onChangeToken);
+  }
+
+  onChangeToken = () => {
+    CurrentUserStore.fetchUser()
+    .then((info) => {
+      this.setState({login: info.login});
+    }).catch(() => {
+      this.setState({login: null});
+    });
+  };
 
   render() {
     const {columnData, cards, repoInfos} = this.props;
@@ -107,6 +125,7 @@ class KanbanRepo extends Component {
           comment.repoOwner = card.repoOwner;
           comment.repoName = card.repoName;
           comment.number = card.number;
+          comment.prAuthor = card.issue.user ? card.issue.user.login : null;
           return comment;
         });
       } else {
@@ -115,7 +134,7 @@ class KanbanRepo extends Component {
     }));
 
     // filter and sort review comments
-    const sortedReviews = FilterStore.filterAndSortReviews(reviews);
+    const sortedReviews = FilterStore.filterAndSortReviews(reviews, this.state.login);
 
     // Get the primary repoOwner and repoName
     const [primaryRepo] = repoInfos;

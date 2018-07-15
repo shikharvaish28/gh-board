@@ -243,6 +243,21 @@ class FilterDropdown extends Component {
     return (<FilterCategory noSearch items={items}/>);
   };
 
+  renderReviews = () => {
+    const filters = getFilters();
+    const {reviews} = filters.getState();
+
+    const items = ['my-reviews', 'reviews-under-my-pr', 'my-meta-reviews', 'others'].map((review) => {
+      return {
+        text: review,
+        isSelected: reviews.indexOf(review) >= 0,
+        toggleHref: filters.toggleReviews(review).url(),
+      };
+    });
+
+    return (<FilterCategory noSearch items={items}/>);
+  };
+
   render() {
     const {milestones, labels} = this.props;
 
@@ -293,6 +308,9 @@ class FilterDropdown extends Component {
           </BS.Panel>
           <BS.Panel className='filter-category' header='Types' eventKey='5'>
             {this.renderTypes()}
+          </BS.Panel>
+          <BS.Panel className='filter-category' header='Reviews' eventKey='6'>
+            {this.renderReviews()}
           </BS.Panel>
         </BS.Accordion>
       </BS.Panel>
