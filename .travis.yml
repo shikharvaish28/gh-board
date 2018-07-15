@@ -18,6 +18,7 @@ jobs:
       before_script: false
       script: .ci/check_moban.sh
       after_success: false
+      deploy: false
 
 # Needed for Firefox
 before_script:
