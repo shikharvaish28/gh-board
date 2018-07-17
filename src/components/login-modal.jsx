@@ -41,6 +41,7 @@ class Login extends Component {
       let hostname = document.location.hostname;
       let tld = hostname.split('.').slice(-2).join('.');
       if (tld == 'github.io') return null;
+      if (tld == 'netlify.com') return null;
       if (tld == 'localhost') return null;
       return 'https://' + hostname + '/api/v3';
 
