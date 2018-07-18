@@ -27,8 +27,8 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
-  - npm run test
   - script/build.sh
+  - npm run test
 
 notifications:
   email: false
