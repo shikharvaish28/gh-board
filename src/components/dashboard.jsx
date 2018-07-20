@@ -18,6 +18,17 @@ const SAMPLE_REPOS = [
   {repoOwner: 'jquery', repoName: 'jquery'}
 ];
 
+// from pre-fetch config (see webpack configuration)
+if (typeof REPOSITORIES !== 'undefined') {
+  const repos = REPOSITORIES;
+  const repoOwner = repos.split(':')[0];
+  const repoNames = repos.substring(repos.indexOf(':') + 1).split('|');
+  SAMPLE_REPOS.push({
+    repoOwner,
+    repoNames,
+    comment: ' (from pre-fetch config)',
+  });
+}
 
 class ListGroupWithMore extends Component {
   state = {morePressedCount: 0};
