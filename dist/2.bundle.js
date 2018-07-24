@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 1438:
+/***/ 1442:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16,27 +16,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _underscore = __webpack_require__(24);
+var _underscore = __webpack_require__(25);
 
 var _underscore2 = _interopRequireDefault(_underscore);
 
-var _reactOcticons = __webpack_require__(31);
+var _reactOcticons = __webpack_require__(32);
 
-var _chart = __webpack_require__(1961);
+var _chart = __webpack_require__(1965);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _database = __webpack_require__(98);
+var _database = __webpack_require__(79);
 
 var _database2 = _interopRequireDefault(_database);
 
-var _routeUtils = __webpack_require__(27);
+var _routeUtils = __webpack_require__(24);
 
-var _issueStore = __webpack_require__(38);
+var _issueStore = __webpack_require__(36);
 
 var _issueStore2 = _interopRequireDefault(_issueStore);
 
-var _loadable = __webpack_require__(50);
+var _loadable = __webpack_require__(46);
 
 var _loadable2 = _interopRequireDefault(_loadable);
 
@@ -347,7 +347,7 @@ exports.default = BurnupShell;
 
 /***/ }),
 
-/***/ 1961:
+/***/ 1965:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -363,7 +363,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _c = __webpack_require__(1962);
+var _c = __webpack_require__(1966);
 
 var _c2 = _interopRequireDefault(_c);
 
@@ -467,7 +467,7 @@ exports.default = ChartComponent;
 
 /***/ }),
 
-/***/ 1962:
+/***/ 1966:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -1504,7 +1504,7 @@ function Chart(config) {
 
 function ChartInternal(api) {
     var $$ = this;
-    $$.d3 = window.d3 ? window.d3 :  true ? __webpack_require__(1963) : undefined;
+    $$.d3 = window.d3 ? window.d3 :  true ? __webpack_require__(1967) : undefined;
     $$.api = api;
     $$.config = $$.getDefaultConfig();
     $$.data = {};
@@ -9710,7 +9710,7 @@ return c3$1;
 
 /***/ }),
 
-/***/ 1963:
+/***/ 1967:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {

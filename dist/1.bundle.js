@@ -1,48 +1,48 @@
 webpackJsonp([1],{
 
-/***/ 1436:
+/***/ 1440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__diagrams_flowchart_graphDb__ = __webpack_require__(1538);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(1539);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__diagrams_flowchart_flowRenderer__ = __webpack_require__(1641);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__diagrams_sequenceDiagram_sequenceRenderer__ = __webpack_require__(1655);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__diagrams_example_exampleRenderer__ = __webpack_require__(1657);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__diagrams_example_parser_example__ = __webpack_require__(1551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__diagrams_flowchart_graphDb__ = __webpack_require__(1542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(1543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__diagrams_flowchart_flowRenderer__ = __webpack_require__(1645);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__diagrams_sequenceDiagram_sequenceRenderer__ = __webpack_require__(1659);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__diagrams_example_exampleRenderer__ = __webpack_require__(1661);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__diagrams_example_parser_example__ = __webpack_require__(1555);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__diagrams_example_parser_example___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__diagrams_example_parser_example__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__diagrams_flowchart_parser_flow__ = __webpack_require__(1540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__diagrams_flowchart_parser_flow__ = __webpack_require__(1544);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__diagrams_flowchart_parser_flow___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__diagrams_flowchart_parser_flow__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__diagrams_flowchart_parser_dot__ = __webpack_require__(1541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__diagrams_flowchart_parser_dot__ = __webpack_require__(1545);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__diagrams_flowchart_parser_dot___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__diagrams_flowchart_parser_dot__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__diagrams_sequenceDiagram_parser_sequenceDiagram__ = __webpack_require__(1548);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__diagrams_sequenceDiagram_parser_sequenceDiagram__ = __webpack_require__(1552);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__diagrams_sequenceDiagram_parser_sequenceDiagram___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__diagrams_sequenceDiagram_parser_sequenceDiagram__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__diagrams_sequenceDiagram_sequenceDb__ = __webpack_require__(1549);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__diagrams_example_exampleDb__ = __webpack_require__(1550);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__diagrams_gantt_ganttRenderer__ = __webpack_require__(1658);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__diagrams_gantt_parser_gantt__ = __webpack_require__(1552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__diagrams_sequenceDiagram_sequenceDb__ = __webpack_require__(1553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__diagrams_example_exampleDb__ = __webpack_require__(1554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__diagrams_gantt_ganttRenderer__ = __webpack_require__(1662);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__diagrams_gantt_parser_gantt__ = __webpack_require__(1556);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__diagrams_gantt_parser_gantt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__diagrams_gantt_parser_gantt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__diagrams_gantt_ganttDb__ = __webpack_require__(1553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__diagrams_classDiagram_parser_classDiagram__ = __webpack_require__(1554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__diagrams_gantt_ganttDb__ = __webpack_require__(1557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__diagrams_classDiagram_parser_classDiagram__ = __webpack_require__(1558);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__diagrams_classDiagram_parser_classDiagram___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__diagrams_classDiagram_parser_classDiagram__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__diagrams_classDiagram_classRenderer__ = __webpack_require__(1659);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__diagrams_classDiagram_classDb__ = __webpack_require__(1555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__diagrams_gitGraph_parser_gitGraph__ = __webpack_require__(1556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__diagrams_classDiagram_classRenderer__ = __webpack_require__(1663);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__diagrams_classDiagram_classDb__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__diagrams_gitGraph_parser_gitGraph__ = __webpack_require__(1560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__diagrams_gitGraph_parser_gitGraph___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__diagrams_gitGraph_parser_gitGraph__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__diagrams_gitGraph_gitGraphRenderer__ = __webpack_require__(1660);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__diagrams_gitGraph_gitGraphAst__ = __webpack_require__(1557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__d3__ = __webpack_require__(1451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__package_json__ = __webpack_require__(1661);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__diagrams_gitGraph_gitGraphRenderer__ = __webpack_require__(1664);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__diagrams_gitGraph_gitGraphAst__ = __webpack_require__(1561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__d3__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__package_json__ = __webpack_require__(1665);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__package_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__package_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__less_dark_mermaid_less__ = __webpack_require__(1662);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__less_dark_mermaid_less__ = __webpack_require__(1666);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__less_dark_mermaid_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__less_dark_mermaid_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__less_default_mermaid_less__ = __webpack_require__(1664);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__less_default_mermaid_less__ = __webpack_require__(1668);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__less_default_mermaid_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__less_default_mermaid_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__less_forest_mermaid_less__ = __webpack_require__(1666);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__less_forest_mermaid_less__ = __webpack_require__(1670);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__less_forest_mermaid_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__less_forest_mermaid_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__less_neutral_mermaid_less__ = __webpack_require__(1668);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__less_neutral_mermaid_less__ = __webpack_require__(1672);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__less_neutral_mermaid_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__less_neutral_mermaid_less__);
 /**
  * ---
@@ -594,7 +594,7 @@ const mermaidAPI = {
 
 /***/ }),
 
-/***/ 1443:
+/***/ 1447:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -655,7 +655,7 @@ const format = (level) => {
 
 /***/ }),
 
-/***/ 1444:
+/***/ 1448:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* global window */
@@ -664,7 +664,7 @@ var lodash;
 
 if (true) {
   try {
-    lodash = __webpack_require__(1456);
+    lodash = __webpack_require__(1460);
   } catch (e) {}
 }
 
@@ -677,11 +677,11 @@ module.exports = lodash;
 
 /***/ }),
 
-/***/ 1451:
+/***/ 1455:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3__ = __webpack_require__(1640);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3__ = __webpack_require__(1644);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_d3__);
 
 
@@ -1134,7 +1134,7 @@ module.exports = lodash;
 
 /***/ }),
 
-/***/ 1454:
+/***/ 1458:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1147,7 +1147,7 @@ exports.default = { title: 'This is a stub' };
 
 /***/ }),
 
-/***/ 1455:
+/***/ 1459:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -1379,7 +1379,7 @@ var substr = 'ab'.substr(-1) === 'b'
 
 /***/ }),
 
-/***/ 1456:
+/***/ 1460:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18472,7 +18472,7 @@ var substr = 'ab'.substr(-1) === 'b'
 
 /***/ }),
 
-/***/ 1478:
+/***/ 1482:
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18505,24 +18505,24 @@ var substr = 'ab'.substr(-1) === 'b'
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-var lib = __webpack_require__(1643);
+var lib = __webpack_require__(1647);
 
 module.exports = {
   Graph: lib.Graph,
-  json: __webpack_require__(1645),
-  alg: __webpack_require__(1646),
+  json: __webpack_require__(1649),
+  alg: __webpack_require__(1650),
   version: lib.version
 };
 
 
 /***/ }),
 
-/***/ 1494:
+/***/ 1498:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(1456), __webpack_require__(1478));
+		module.exports = factory(__webpack_require__(1460), __webpack_require__(1482));
 	else if(typeof define === 'function' && define.amd)
 		define(["lodash", "graphlib"], factory);
 	else if(typeof exports === 'object')
@@ -18599,7 +18599,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(1456);
+module.exports = __webpack_require__(1460);
 
 /***/ }),
 /* 1 */
@@ -18881,7 +18881,7 @@ exports.default = {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(1478);
+module.exports = __webpack_require__(1482);
 
 /***/ }),
 /* 3 */
@@ -22042,13 +22042,13 @@ module.exports = {"name":"dagre-layout","version":"0.7.9","description":"Graph l
 
 /***/ }),
 
-/***/ 1495:
+/***/ 1499:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = Graph;
 
@@ -22569,13 +22569,13 @@ function edgeObjToId(isDirected, edgeObj) {
 
 /***/ }),
 
-/***/ 1538:
+/***/ 1542:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(1539);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(1543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1455);
 
 
 
@@ -23041,11 +23041,11 @@ const getSubGraphs = function () {
 
 /***/ }),
 
-/***/ 1539:
+/***/ 1543:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1447);
 
 
 /**
@@ -23121,7 +23121,7 @@ const isSubstringInArray = function (str, arr) {
 
 /***/ }),
 
-/***/ 1540:
+/***/ 1544:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -24082,7 +24082,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -24093,7 +24093,7 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1541:
+/***/ 1545:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -24833,7 +24833,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -24844,7 +24844,7 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1542:
+/***/ 1546:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
@@ -34408,11 +34408,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
 
 /***/ }),
 
-/***/ 1543:
+/***/ 1547:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444),
-    PriorityQueue = __webpack_require__(1544);
+var _ = __webpack_require__(1448),
+    PriorityQueue = __webpack_require__(1548);
 
 module.exports = dijkstra;
 
@@ -34469,10 +34469,10 @@ function runDijkstra(g, source, weightFn, edgeFn) {
 
 /***/ }),
 
-/***/ 1544:
+/***/ 1548:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = PriorityQueue;
 
@@ -34628,10 +34628,10 @@ PriorityQueue.prototype._swap = function(i, j) {
 
 /***/ }),
 
-/***/ 1545:
+/***/ 1549:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = tarjan;
 
@@ -34682,10 +34682,10 @@ function tarjan(g) {
 
 /***/ }),
 
-/***/ 1546:
+/***/ 1550:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = topsort;
 topsort.CycleException = CycleException;
@@ -34723,10 +34723,10 @@ function CycleException() {}
 
 /***/ }),
 
-/***/ 1547:
+/***/ 1551:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = dfs;
 
@@ -34772,7 +34772,7 @@ function doDfs(g, v, postorder, visited, navigation, acc) {
 
 /***/ }),
 
-/***/ 1548:
+/***/ 1552:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -35578,7 +35578,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -35589,11 +35589,11 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1549:
+/***/ 1553:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1447);
 
 
 var actors = {}
@@ -35800,11 +35800,11 @@ const apply = function (param) {
 
 /***/ }),
 
-/***/ 1550:
+/***/ 1554:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1447);
 
 
 var message = ''
@@ -35845,7 +35845,7 @@ const getInfo = function () {
 
 /***/ }),
 
-/***/ 1551:
+/***/ 1555:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -36475,7 +36475,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -36486,7 +36486,7 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1552:
+/***/ 1556:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -37142,7 +37142,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -37153,13 +37153,13 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1553:
+/***/ 1557:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logger__ = __webpack_require__(1447);
 
 
 
@@ -37547,7 +37547,7 @@ var compileTasks = function () {
 
 /***/ }),
 
-/***/ 1554:
+/***/ 1558:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -38287,7 +38287,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -38298,11 +38298,11 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1555:
+/***/ 1559:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logger__ = __webpack_require__(1447);
 
 
 
@@ -38419,7 +38419,7 @@ const relationType = {
 
 /***/ }),
 
-/***/ 1556:
+/***/ 1560:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, module) {/* parser generated by jison 0.4.17 */
@@ -39115,7 +39115,7 @@ exports.main = function commonjsMain(args) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
     }
-    var source = __webpack_require__(1454).readFileSync(__webpack_require__(1455).normalize(args[1]), "utf8");
+    var source = __webpack_require__(1458).readFileSync(__webpack_require__(1459).normalize(args[1]), "utf8");
     return exports.parser.parse(source);
 };
 if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s] === module) {
@@ -39126,13 +39126,13 @@ if (typeof module !== 'undefined' && __webpack_require__.c[__webpack_require__.s
 
 /***/ }),
 
-/***/ 1557:
+/***/ 1561:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logger__ = __webpack_require__(1447);
 
 
 
@@ -39399,7 +39399,7 @@ const getHead = function () { return head }
 
 /***/ }),
 
-/***/ 1640:
+/***/ 1644:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
@@ -48963,19 +48963,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
 
 /***/ }),
 
-/***/ 1641:
+/***/ 1645:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__graphDb__ = __webpack_require__(1538);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_flow__ = __webpack_require__(1540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__graphDb__ = __webpack_require__(1542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_flow__ = __webpack_require__(1544);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_flow___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__parser_flow__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parser_dot__ = __webpack_require__(1541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parser_dot__ = __webpack_require__(1545);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parser_dot___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__parser_dot__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__d3__ = __webpack_require__(1451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_dagre_d3_renderer__ = __webpack_require__(1642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__d3__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_dagre_d3_renderer__ = __webpack_require__(1646);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_dagre_d3_renderer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_dagre_d3_renderer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__logger__ = __webpack_require__(1447);
 
 
 
@@ -49501,12 +49501,12 @@ const draw = function (text, id, isDot) {
 
 /***/ }),
 
-/***/ 1642:
+/***/ 1646:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(1542), __webpack_require__(1456), __webpack_require__(1494), __webpack_require__(1478));
+		module.exports = factory(__webpack_require__(1546), __webpack_require__(1460), __webpack_require__(1498), __webpack_require__(1482));
 	else if(typeof define === 'function' && define.amd)
 		define(["d3", "lodash", "dagre-layout", "graphlib"], factory);
 	else if(typeof exports === 'object')
@@ -49651,13 +49651,13 @@ exports.default = {
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(1542);
+module.exports = __webpack_require__(1546);
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(1456);
+module.exports = __webpack_require__(1460);
 
 /***/ }),
 /* 3 */
@@ -49756,7 +49756,7 @@ exports.default = addLabel;
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(1494);
+module.exports = __webpack_require__(1498);
 
 /***/ }),
 /* 6 */
@@ -49964,7 +49964,7 @@ exports.default = {
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(1478);
+module.exports = __webpack_require__(1482);
 
 /***/ }),
 /* 12 */
@@ -51098,19 +51098,19 @@ module.exports = {"name":"dagre-d3-renderer","version":"0.4.23","description":"A
 
 /***/ }),
 
-/***/ 1643:
+/***/ 1647:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Includes only the "core" of graphlib
 module.exports = {
-  Graph: __webpack_require__(1495),
-  version: __webpack_require__(1644)
+  Graph: __webpack_require__(1499),
+  version: __webpack_require__(1648)
 };
 
 
 /***/ }),
 
-/***/ 1644:
+/***/ 1648:
 /***/ (function(module, exports) {
 
 module.exports = '2.1.1';
@@ -51118,11 +51118,11 @@ module.exports = '2.1.1';
 
 /***/ }),
 
-/***/ 1645:
+/***/ 1649:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444),
-    Graph = __webpack_require__(1495);
+var _ = __webpack_require__(1448),
+    Graph = __webpack_require__(1499);
 
 module.exports = {
   write: write,
@@ -51191,30 +51191,30 @@ function read(json) {
 
 /***/ }),
 
-/***/ 1646:
+/***/ 1650:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  components: __webpack_require__(1647),
-  dijkstra: __webpack_require__(1543),
-  dijkstraAll: __webpack_require__(1648),
-  findCycles: __webpack_require__(1649),
-  floydWarshall: __webpack_require__(1650),
-  isAcyclic: __webpack_require__(1651),
-  postorder: __webpack_require__(1652),
-  preorder: __webpack_require__(1653),
-  prim: __webpack_require__(1654),
-  tarjan: __webpack_require__(1545),
-  topsort: __webpack_require__(1546)
+  components: __webpack_require__(1651),
+  dijkstra: __webpack_require__(1547),
+  dijkstraAll: __webpack_require__(1652),
+  findCycles: __webpack_require__(1653),
+  floydWarshall: __webpack_require__(1654),
+  isAcyclic: __webpack_require__(1655),
+  postorder: __webpack_require__(1656),
+  preorder: __webpack_require__(1657),
+  prim: __webpack_require__(1658),
+  tarjan: __webpack_require__(1549),
+  topsort: __webpack_require__(1550)
 };
 
 
 /***/ }),
 
-/***/ 1647:
+/***/ 1651:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = components;
 
@@ -51245,11 +51245,11 @@ function components(g) {
 
 /***/ }),
 
-/***/ 1648:
+/***/ 1652:
 /***/ (function(module, exports, __webpack_require__) {
 
-var dijkstra = __webpack_require__(1543),
-    _ = __webpack_require__(1444);
+var dijkstra = __webpack_require__(1547),
+    _ = __webpack_require__(1448);
 
 module.exports = dijkstraAll;
 
@@ -51262,11 +51262,11 @@ function dijkstraAll(g, weightFunc, edgeFunc) {
 
 /***/ }),
 
-/***/ 1649:
+/***/ 1653:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444),
-    tarjan = __webpack_require__(1545);
+var _ = __webpack_require__(1448),
+    tarjan = __webpack_require__(1549);
 
 module.exports = findCycles;
 
@@ -51279,10 +51279,10 @@ function findCycles(g) {
 
 /***/ }),
 
-/***/ 1650:
+/***/ 1654:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444);
+var _ = __webpack_require__(1448);
 
 module.exports = floydWarshall;
 
@@ -51336,10 +51336,10 @@ function runFloydWarshall(g, weightFn, edgeFn) {
 
 /***/ }),
 
-/***/ 1651:
+/***/ 1655:
 /***/ (function(module, exports, __webpack_require__) {
 
-var topsort = __webpack_require__(1546);
+var topsort = __webpack_require__(1550);
 
 module.exports = isAcyclic;
 
@@ -51358,10 +51358,10 @@ function isAcyclic(g) {
 
 /***/ }),
 
-/***/ 1652:
+/***/ 1656:
 /***/ (function(module, exports, __webpack_require__) {
 
-var dfs = __webpack_require__(1547);
+var dfs = __webpack_require__(1551);
 
 module.exports = postorder;
 
@@ -51372,10 +51372,10 @@ function postorder(g, vs) {
 
 /***/ }),
 
-/***/ 1653:
+/***/ 1657:
 /***/ (function(module, exports, __webpack_require__) {
 
-var dfs = __webpack_require__(1547);
+var dfs = __webpack_require__(1551);
 
 module.exports = preorder;
 
@@ -51386,12 +51386,12 @@ function preorder(g, vs) {
 
 /***/ }),
 
-/***/ 1654:
+/***/ 1658:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _ = __webpack_require__(1444),
-    Graph = __webpack_require__(1495),
-    PriorityQueue = __webpack_require__(1544);
+var _ = __webpack_require__(1448),
+    Graph = __webpack_require__(1499),
+    PriorityQueue = __webpack_require__(1548);
 
 module.exports = prim;
 
@@ -51445,16 +51445,16 @@ function prim(g, weightFunc) {
 
 /***/ }),
 
-/***/ 1655:
+/***/ 1659:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__svgDraw__ = __webpack_require__(1656);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logger__ = __webpack_require__(1443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parser_sequenceDiagram__ = __webpack_require__(1548);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__svgDraw__ = __webpack_require__(1660);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logger__ = __webpack_require__(1447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parser_sequenceDiagram__ = __webpack_require__(1552);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parser_sequenceDiagram___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__parser_sequenceDiagram__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sequenceDb__ = __webpack_require__(1549);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sequenceDb__ = __webpack_require__(1553);
 
 
 
@@ -51977,7 +51977,7 @@ const draw = function (text, id) {
 
 /***/ }),
 
-/***/ 1656:
+/***/ 1660:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52337,15 +52337,15 @@ var _drawTextCandidateFunc = (function () {
 
 /***/ }),
 
-/***/ 1657:
+/***/ 1661:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exampleDb__ = __webpack_require__(1550);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_example_js__ = __webpack_require__(1551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exampleDb__ = __webpack_require__(1554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_example_js__ = __webpack_require__(1555);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_example_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__parser_example_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logger__ = __webpack_require__(1447);
 
 
 
@@ -52391,16 +52391,16 @@ const draw = function (txt, id, ver) {
 
 /***/ }),
 
-/***/ 1658:
+/***/ 1662:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_gantt__ = __webpack_require__(1552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_gantt__ = __webpack_require__(1556);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parser_gantt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__parser_gantt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ganttDb__ = __webpack_require__(1553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__d3__ = __webpack_require__(1451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ganttDb__ = __webpack_require__(1557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__d3__ = __webpack_require__(1455);
 
 
 
@@ -52817,16 +52817,16 @@ const draw = function (text, id) {
 
 /***/ }),
 
-/***/ 1659:
+/***/ 1663:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dagre_layout__ = __webpack_require__(1494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dagre_layout__ = __webpack_require__(1498);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dagre_layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_dagre_layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classDb__ = __webpack_require__(1555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logger__ = __webpack_require__(1443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parser_classDiagram__ = __webpack_require__(1554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classDb__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__d3__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logger__ = __webpack_require__(1447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parser_classDiagram__ = __webpack_require__(1558);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parser_classDiagram___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__parser_classDiagram__);
 
 
@@ -53205,17 +53205,17 @@ const draw = function (text, id) {
 
 /***/ }),
 
-/***/ 1660:
+/***/ 1664:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__gitGraphAst__ = __webpack_require__(1557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parser_gitGraph__ = __webpack_require__(1556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__gitGraphAst__ = __webpack_require__(1561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parser_gitGraph__ = __webpack_require__(1560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parser_gitGraph___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__parser_gitGraph__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__d3__ = __webpack_require__(1451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__logger__ = __webpack_require__(1443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__d3__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__logger__ = __webpack_require__(1447);
 
 
 
@@ -53503,104 +53503,10 @@ const draw = function (txt, id, ver) {
 
 /***/ }),
 
-/***/ 1661:
+/***/ 1665:
 /***/ (function(module, exports) {
 
 module.exports = {"_args":[["mermaid@7.1.0","/home/travis/build/coala/gh-board"]],"_from":"mermaid@7.1.0","_id":"mermaid@7.1.0","_inBundle":false,"_integrity":"sha512-pQsLCMSnWA346xVydfHNx/3OCyvR5xGWWCRtmCi9UikEaulCnTT/ma2P6/6hOLBcQsAhD1E44qyvZxEsmAYZbQ==","_location":"/mermaid","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"mermaid@7.1.0","name":"mermaid","escapedName":"mermaid","rawSpec":"7.1.0","saveSpec":null,"fetchSpec":"7.1.0"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/mermaid/-/mermaid-7.1.0.tgz","_spec":"7.1.0","_where":"/home/travis/build/coala/gh-board","author":{"name":"Knut Sveidqvist"},"bugs":{"url":"https://github.com/knsv/mermaid/issues"},"dependencies":{"d3":"3.5.17","dagre-d3-renderer":"^0.4.24","dagre-layout":"^0.8.0","he":"^1.1.1","lodash":"^4.17.4","moment":"^2.18.1"},"description":"Markdownish syntax for generating flowcharts, sequence diagrams, class diagrams, gantt charts and git graphs.","devDependencies":{"babel-core":"^6.26.0","babel-loader":"^7.1.2","babel-plugin-lodash":"^3.2.11","babel-preset-env":"^1.6.0","babel-preset-es2015":"^6.24.1","codeclimate-test-reporter":"^0.5.0","css-loader":"^0.28.7","css-to-string-loader":"^0.1.3","extract-text-webpack-plugin":"^3.0.0","gulp":"^3.9.1","gulp-filelog":"^0.4.1","gulp-jison":"^1.2.0","inject-loader":"^3.0.1","jasmine":"^2.8.0","jasmine-es6":"^0.4.1","jison":"^0.4.18","karma":"^1.7.1","karma-chrome-launcher":"^2.2.0","karma-jasmine":"^1.1.0","karma-sourcemap-loader":"^0.3.7","karma-webpack":"^2.0.4","less":"^2.7.2","less-loader":"^4.0.5","puppeteer":"^0.10.2","standard":"^10.0.3","style-loader":"^0.18.2","webpack":"^3.5.6","webpack-node-externals":"^1.6.0"},"files":["dist","src"],"homepage":"https://github.com/knsv/mermaid#readme","keywords":["diagram","markdown","flowchart","sequence diagram","gantt","class diagram","git graph"],"license":"MIT","main":"dist/mermaid.core.js","name":"mermaid","repository":{"type":"git","url":"git+https://github.com/knsv/mermaid.git"},"scripts":{"build":"node -r babel-register ./node_modules/.bin/webpack --progress --colors","build:watch":"yarn build --watch","jison":"node -r babel-register node_modules/.bin/gulp jison","karma":"node -r babel-register node_modules/.bin/karma start karma.conf.js --single-run","lint":"standard","prepublishOnly":"yarn build && yarn release && yarn test","release":"yarn build -p --config webpack.config.prod.js","test":"yarn lint && yarn karma","upgrade":"yarn upgrade --latest && yarn remove d3 && yarn add d3@3.5.17"},"standard":{"ignore":["**/parser/*.js","dist/**/*.js"]},"version":"7.1.0"}
-
-/***/ }),
-
-/***/ 1662:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1663);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(564)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less", function() {
-			var newContent = require("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 1663:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(563)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/* Flowchart variables */\n/* Sequence Diagram variables */\n/* Gantt chart variables */\n.mermaid .label {\n  color: #323D47;\n}\n.node rect,\n.node circle,\n.node ellipse,\n.node polygon {\n  fill: #BDD5EA;\n  stroke: #81B1DB;\n  stroke-width: 1px;\n}\n.arrowheadPath {\n  fill: lightgrey;\n}\n.edgePath .path {\n  stroke: lightgrey;\n}\n.edgeLabel {\n  background-color: #e8e8e8;\n}\n.cluster rect {\n  fill: #6D6D65 !important;\n  rx: 4 !important;\n  stroke: rgba(255, 255, 255, 0.25) !important;\n  stroke-width: 1px !important;\n}\n.cluster text {\n  fill: #F9FFFE;\n}\n.actor {\n  stroke: #81B1DB;\n  fill: #BDD5EA;\n}\ntext.actor {\n  fill: black;\n  stroke: none;\n}\n.actor-line {\n  stroke: lightgrey;\n}\n.messageLine0 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: lightgrey;\n}\n.messageLine1 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  stroke: lightgrey;\n}\n#arrowhead {\n  fill: lightgrey !important;\n}\n#crosshead path {\n  fill: lightgrey !important;\n  stroke: lightgrey !important;\n}\n.messageText {\n  fill: lightgrey;\n  stroke: none;\n}\n.labelBox {\n  stroke: #81B1DB;\n  fill: #BDD5EA;\n}\n.labelText {\n  fill: #323D47;\n  stroke: none;\n}\n.loopText {\n  fill: lightgrey;\n  stroke: none;\n}\n.loopLine {\n  stroke-width: 2;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #81B1DB;\n}\n.note {\n  stroke: rgba(255, 255, 255, 0.25);\n  fill: #fff5ad;\n}\n.noteText {\n  fill: black;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\n/** Section styling */\n.section {\n  stroke: none;\n  opacity: 0.2;\n}\n.section0 {\n  fill: rgba(255, 255, 255, 0.3);\n}\n.section2 {\n  fill: #EAE8B9;\n}\n.section1,\n.section3 {\n  fill: white;\n  opacity: 0.2;\n}\n.sectionTitle0 {\n  fill: #F9FFFE;\n}\n.sectionTitle1 {\n  fill: #F9FFFE;\n}\n.sectionTitle2 {\n  fill: #F9FFFE;\n}\n.sectionTitle3 {\n  fill: #F9FFFE;\n}\n.sectionTitle {\n  text-anchor: start;\n  font-size: 11px;\n  text-height: 14px;\n}\n/* Grid and axis */\n.grid .tick {\n  stroke: rgba(255, 255, 255, 0.3);\n  opacity: 0.3;\n  shape-rendering: crispEdges;\n}\n.grid .tick text {\n  fill: lightgrey;\n  opacity: 0.5;\n}\n.grid path {\n  stroke-width: 0;\n}\n/* Today line */\n.today {\n  fill: none;\n  stroke: #DB5757;\n  stroke-width: 2px;\n}\n/* Task styling */\n/* Default task */\n.task {\n  stroke-width: 1;\n}\n.taskText {\n  text-anchor: middle;\n  font-size: 11px;\n}\n.taskTextOutsideRight {\n  fill: #323D47;\n  text-anchor: start;\n  font-size: 11px;\n}\n.taskTextOutsideLeft {\n  fill: #323D47;\n  text-anchor: end;\n  font-size: 11px;\n}\n/* Specific task settings for the sections*/\n.taskText0,\n.taskText1,\n.taskText2,\n.taskText3 {\n  fill: #323D47;\n}\n.task0,\n.task1,\n.task2,\n.task3 {\n  fill: #BDD5EA;\n  stroke: rgba(255, 255, 255, 0.5);\n}\n.taskTextOutside0,\n.taskTextOutside2 {\n  fill: lightgrey;\n}\n.taskTextOutside1,\n.taskTextOutside3 {\n  fill: lightgrey;\n}\n/* Active task */\n.active0,\n.active1,\n.active2,\n.active3 {\n  fill: #81B1DB;\n  stroke: rgba(255, 255, 255, 0.5);\n}\n.activeText0,\n.activeText1,\n.activeText2,\n.activeText3 {\n  fill: #323D47 !important;\n}\n/* Completed task */\n.done0,\n.done1,\n.done2,\n.done3 {\n  fill: lightgrey;\n}\n.doneText0,\n.doneText1,\n.doneText2,\n.doneText3 {\n  fill: #323D47 !important;\n}\n/* Tasks on the critical line */\n.crit0,\n.crit1,\n.crit2,\n.crit3 {\n  stroke: #E83737;\n  fill: #E83737;\n  stroke-width: 2;\n}\n.activeCrit0,\n.activeCrit1,\n.activeCrit2,\n.activeCrit3 {\n  stroke: #E83737;\n  fill: #81B1DB;\n  stroke-width: 2;\n}\n.doneCrit0,\n.doneCrit1,\n.doneCrit2,\n.doneCrit3 {\n  stroke: #E83737;\n  fill: lightgrey;\n  stroke-width: 1;\n  cursor: pointer;\n  shape-rendering: crispEdges;\n}\n.doneCritText0,\n.doneCritText1,\n.doneCritText2,\n.doneCritText3 {\n  fill: lightgrey !important;\n}\n.activeCritText0,\n.activeCritText1,\n.activeCritText2,\n.activeCritText3 {\n  fill: #323D47 !important;\n}\n.titleText {\n  text-anchor: middle;\n  font-size: 18px;\n  fill: lightgrey;\n}\ng.classGroup text {\n  fill: purple;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 10px;\n}\ng.classGroup rect {\n  fill: #BDD5EA;\n  stroke: purple;\n}\ng.classGroup line {\n  stroke: purple;\n  stroke-width: 1;\n}\nsvg .classLabel .box {\n  stroke: none;\n  stroke-width: 0;\n  fill: #BDD5EA;\n  opacity: 0.5;\n}\nsvg .classLabel .label {\n  fill: purple;\n  font-size: 10px;\n}\n.relation {\n  stroke: purple;\n  stroke-width: 1;\n  fill: none;\n}\n.composition {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#compositionStart {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#compositionEnd {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n.aggregation {\n  fill: #BDD5EA;\n  stroke: purple;\n  stroke-width: 1;\n}\n#aggregationStart {\n  fill: #BDD5EA;\n  stroke: purple;\n  stroke-width: 1;\n}\n#aggregationEnd {\n  fill: #BDD5EA;\n  stroke: purple;\n  stroke-width: 1;\n}\n#dependencyStart {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#dependencyEnd {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#extensionStart {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#extensionEnd {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n.commit-id,\n.commit-msg,\n.branch-label {\n  fill: lightgrey;\n  color: lightgrey;\n}\n.node text {\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\ndiv.mermaidTooltip {\n  position: absolute;\n  text-align: center;\n  max-width: 200px;\n  padding: 2px;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 12px;\n  background: #6D6D65;\n  border: 1px solid rgba(255, 255, 255, 0.25);\n  border-radius: 2px;\n  pointer-events: none;\n  z-index: 100;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1664:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1665);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(564)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less", function() {
-			var newContent = require("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 1665:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(563)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/* Flowchart variables */\n/* Sequence Diagram variables */\n/* Gantt chart variables */\n.mermaid .label {\n  color: #333;\n}\n.node rect,\n.node circle,\n.node ellipse,\n.node polygon {\n  fill: #ECECFF;\n  stroke: #CCCCFF;\n  stroke-width: 1px;\n}\n.arrowheadPath {\n  fill: #333333;\n}\n.edgePath .path {\n  stroke: #333333;\n}\n.edgeLabel {\n  background-color: #e8e8e8;\n}\n.cluster rect {\n  fill: #ffffde !important;\n  rx: 4 !important;\n  stroke: #aaaa33 !important;\n  stroke-width: 1px !important;\n}\n.cluster text {\n  fill: #333;\n}\n.actor {\n  stroke: #CCCCFF;\n  fill: #ECECFF;\n}\ntext.actor {\n  fill: black;\n  stroke: none;\n}\n.actor-line {\n  stroke: grey;\n}\n.messageLine0 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #333;\n}\n.messageLine1 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  stroke: #333;\n}\n#arrowhead {\n  fill: #333;\n}\n#crosshead path {\n  fill: #333 !important;\n  stroke: #333 !important;\n}\n.messageText {\n  fill: #333;\n  stroke: none;\n}\n.labelBox {\n  stroke: #CCCCFF;\n  fill: #ECECFF;\n}\n.labelText {\n  fill: black;\n  stroke: none;\n}\n.loopText {\n  fill: black;\n  stroke: none;\n}\n.loopLine {\n  stroke-width: 2;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #CCCCFF;\n}\n.note {\n  stroke: #aaaa33;\n  fill: #fff5ad;\n}\n.noteText {\n  fill: black;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\n/** Section styling */\n.section {\n  stroke: none;\n  opacity: 0.2;\n}\n.section0 {\n  fill: rgba(102, 102, 255, 0.49);\n}\n.section2 {\n  fill: #fff400;\n}\n.section1,\n.section3 {\n  fill: white;\n  opacity: 0.2;\n}\n.sectionTitle0 {\n  fill: #333;\n}\n.sectionTitle1 {\n  fill: #333;\n}\n.sectionTitle2 {\n  fill: #333;\n}\n.sectionTitle3 {\n  fill: #333;\n}\n.sectionTitle {\n  text-anchor: start;\n  font-size: 11px;\n  text-height: 14px;\n}\n/* Grid and axis */\n.grid .tick {\n  stroke: lightgrey;\n  opacity: 0.3;\n  shape-rendering: crispEdges;\n}\n.grid path {\n  stroke-width: 0;\n}\n/* Today line */\n.today {\n  fill: none;\n  stroke: red;\n  stroke-width: 2px;\n}\n/* Task styling */\n/* Default task */\n.task {\n  stroke-width: 2;\n}\n.taskText {\n  text-anchor: middle;\n  font-size: 11px;\n}\n.taskTextOutsideRight {\n  fill: black;\n  text-anchor: start;\n  font-size: 11px;\n}\n.taskTextOutsideLeft {\n  fill: black;\n  text-anchor: end;\n  font-size: 11px;\n}\n/* Specific task settings for the sections*/\n.taskText0,\n.taskText1,\n.taskText2,\n.taskText3 {\n  fill: white;\n}\n.task0,\n.task1,\n.task2,\n.task3 {\n  fill: #8a90dd;\n  stroke: #534fbc;\n}\n.taskTextOutside0,\n.taskTextOutside2 {\n  fill: black;\n}\n.taskTextOutside1,\n.taskTextOutside3 {\n  fill: black;\n}\n/* Active task */\n.active0,\n.active1,\n.active2,\n.active3 {\n  fill: #bfc7ff;\n  stroke: #534fbc;\n}\n.activeText0,\n.activeText1,\n.activeText2,\n.activeText3 {\n  fill: black !important;\n}\n/* Completed task */\n.done0,\n.done1,\n.done2,\n.done3 {\n  stroke: grey;\n  fill: lightgrey;\n  stroke-width: 2;\n}\n.doneText0,\n.doneText1,\n.doneText2,\n.doneText3 {\n  fill: black !important;\n}\n/* Tasks on the critical line */\n.crit0,\n.crit1,\n.crit2,\n.crit3 {\n  stroke: #ff8888;\n  fill: red;\n  stroke-width: 2;\n}\n.activeCrit0,\n.activeCrit1,\n.activeCrit2,\n.activeCrit3 {\n  stroke: #ff8888;\n  fill: #bfc7ff;\n  stroke-width: 2;\n}\n.doneCrit0,\n.doneCrit1,\n.doneCrit2,\n.doneCrit3 {\n  stroke: #ff8888;\n  fill: lightgrey;\n  stroke-width: 2;\n  cursor: pointer;\n  shape-rendering: crispEdges;\n}\n.doneCritText0,\n.doneCritText1,\n.doneCritText2,\n.doneCritText3 {\n  fill: black !important;\n}\n.activeCritText0,\n.activeCritText1,\n.activeCritText2,\n.activeCritText3 {\n  fill: black !important;\n}\n.titleText {\n  text-anchor: middle;\n  font-size: 18px;\n  fill: black;\n}\ng.classGroup text {\n  fill: #9370DB;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 10px;\n}\ng.classGroup rect {\n  fill: #ECECFF;\n  stroke: #9370DB;\n}\ng.classGroup line {\n  stroke: #9370DB;\n  stroke-width: 1;\n}\nsvg .classLabel .box {\n  stroke: none;\n  stroke-width: 0;\n  fill: #ECECFF;\n  opacity: 0.5;\n}\nsvg .classLabel .label {\n  fill: #9370DB;\n  font-size: 10px;\n}\n.relation {\n  stroke: #9370DB;\n  stroke-width: 1;\n  fill: none;\n}\n.composition {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#compositionStart {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#compositionEnd {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n.aggregation {\n  fill: #ECECFF;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#aggregationStart {\n  fill: #ECECFF;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#aggregationEnd {\n  fill: #ECECFF;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#dependencyStart {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#dependencyEnd {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#extensionStart {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#extensionEnd {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n.node text {\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\ndiv.mermaidTooltip {\n  position: absolute;\n  text-align: center;\n  max-width: 200px;\n  padding: 2px;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 12px;\n  background: #ffffde;\n  border: 1px solid #aaaa33;\n  border-radius: 2px;\n  pointer-events: none;\n  z-index: 100;\n}\n", ""]);
-
-// exports
-
 
 /***/ }),
 
@@ -53644,7 +53550,7 @@ exports = module.exports = __webpack_require__(563)(undefined);
 
 
 // module
-exports.push([module.i, "/* Flowchart variables */\n/* Sequence Diagram variables */\n/* Gantt chart variables */\n.mermaid .label {\n  font-family: 'trebuchet ms', verdana, arial;\n  color: #333;\n}\n.node rect,\n.node circle,\n.node ellipse,\n.node polygon {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1px;\n}\n.arrowheadPath {\n  fill: green;\n}\n.edgePath .path {\n  stroke: green;\n  stroke-width: 1.5px;\n}\n.edgeLabel {\n  background-color: #e8e8e8;\n}\n.cluster rect {\n  fill: #cdffb2 !important;\n  rx: 4 !important;\n  stroke: #6eaa49 !important;\n  stroke-width: 1px !important;\n}\n.cluster text {\n  fill: #333;\n}\n.actor {\n  stroke: #13540c;\n  fill: #cde498;\n}\ntext.actor {\n  fill: black;\n  stroke: none;\n}\n.actor-line {\n  stroke: grey;\n}\n.messageLine0 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #333;\n}\n.messageLine1 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  stroke: #333;\n}\n#arrowhead {\n  fill: #333;\n}\n#crosshead path {\n  fill: #333 !important;\n  stroke: #333 !important;\n}\n.messageText {\n  fill: #333;\n  stroke: none;\n}\n.labelBox {\n  stroke: #326932;\n  fill: #cde498;\n}\n.labelText {\n  fill: black;\n  stroke: none;\n}\n.loopText {\n  fill: black;\n  stroke: none;\n}\n.loopLine {\n  stroke-width: 2;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #326932;\n}\n.note {\n  stroke: #6eaa49;\n  fill: #fff5ad;\n}\n.noteText {\n  fill: black;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\n/** Section styling */\n.section {\n  stroke: none;\n  opacity: 0.2;\n}\n.section0 {\n  fill: #6eaa49;\n}\n.section2 {\n  fill: #6eaa49;\n}\n.section1,\n.section3 {\n  fill: white;\n  opacity: 0.2;\n}\n.sectionTitle0 {\n  fill: #333;\n}\n.sectionTitle1 {\n  fill: #333;\n}\n.sectionTitle2 {\n  fill: #333;\n}\n.sectionTitle3 {\n  fill: #333;\n}\n.sectionTitle {\n  text-anchor: start;\n  font-size: 11px;\n  text-height: 14px;\n}\n/* Grid and axis */\n.grid .tick {\n  stroke: lightgrey;\n  opacity: 0.3;\n  shape-rendering: crispEdges;\n}\n.grid path {\n  stroke-width: 0;\n}\n/* Today line */\n.today {\n  fill: none;\n  stroke: red;\n  stroke-width: 2px;\n}\n/* Task styling */\n/* Default task */\n.task {\n  stroke-width: 2;\n}\n.taskText {\n  text-anchor: middle;\n  font-size: 11px;\n}\n.taskTextOutsideRight {\n  fill: black;\n  text-anchor: start;\n  font-size: 11px;\n}\n.taskTextOutsideLeft {\n  fill: black;\n  text-anchor: end;\n  font-size: 11px;\n}\n/* Specific task settings for the sections*/\n.taskText0,\n.taskText1,\n.taskText2,\n.taskText3 {\n  fill: white;\n}\n.task0,\n.task1,\n.task2,\n.task3 {\n  fill: #487e3a;\n  stroke: #13540c;\n}\n.taskTextOutside0,\n.taskTextOutside2 {\n  fill: black;\n}\n.taskTextOutside1,\n.taskTextOutside3 {\n  fill: black;\n}\n/* Active task */\n.active0,\n.active1,\n.active2,\n.active3 {\n  fill: #cde498;\n  stroke: #13540c;\n}\n.activeText0,\n.activeText1,\n.activeText2,\n.activeText3 {\n  fill: black !important;\n}\n/* Completed task */\n.done0,\n.done1,\n.done2,\n.done3 {\n  stroke: grey;\n  fill: lightgrey;\n  stroke-width: 2;\n}\n.doneText0,\n.doneText1,\n.doneText2,\n.doneText3 {\n  fill: black !important;\n}\n/* Tasks on the critical line */\n.crit0,\n.crit1,\n.crit2,\n.crit3 {\n  stroke: #ff8888;\n  fill: red;\n  stroke-width: 2;\n}\n.activeCrit0,\n.activeCrit1,\n.activeCrit2,\n.activeCrit3 {\n  stroke: #ff8888;\n  fill: #cde498;\n  stroke-width: 2;\n}\n.doneCrit0,\n.doneCrit1,\n.doneCrit2,\n.doneCrit3 {\n  stroke: #ff8888;\n  fill: lightgrey;\n  stroke-width: 2;\n  cursor: pointer;\n  shape-rendering: crispEdges;\n}\n.doneCritText0,\n.doneCritText1,\n.doneCritText2,\n.doneCritText3 {\n  fill: black !important;\n}\n.activeCritText0,\n.activeCritText1,\n.activeCritText2,\n.activeCritText3 {\n  fill: black !important;\n}\n.titleText {\n  text-anchor: middle;\n  font-size: 18px;\n  fill: black;\n}\ng.classGroup text {\n  fill: #13540c;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 10px;\n}\ng.classGroup rect {\n  fill: #cde498;\n  stroke: #13540c;\n}\ng.classGroup line {\n  stroke: #13540c;\n  stroke-width: 1;\n}\nsvg .classLabel .box {\n  stroke: none;\n  stroke-width: 0;\n  fill: #cde498;\n  opacity: 0.5;\n}\nsvg .classLabel .label {\n  fill: #13540c;\n  font-size: 10px;\n}\n.relation {\n  stroke: #13540c;\n  stroke-width: 1;\n  fill: none;\n}\n.composition {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#compositionStart {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#compositionEnd {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n.aggregation {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#aggregationStart {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#aggregationEnd {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#dependencyStart {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#dependencyEnd {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#extensionStart {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#extensionEnd {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n.node text {\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\ndiv.mermaidTooltip {\n  position: absolute;\n  text-align: center;\n  max-width: 200px;\n  padding: 2px;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 12px;\n  background: #cdffb2;\n  border: 1px solid #6eaa49;\n  border-radius: 2px;\n  pointer-events: none;\n  z-index: 100;\n}\n", ""]);
+exports.push([module.i, "/* Flowchart variables */\n/* Sequence Diagram variables */\n/* Gantt chart variables */\n.mermaid .label {\n  color: #323D47;\n}\n.node rect,\n.node circle,\n.node ellipse,\n.node polygon {\n  fill: #BDD5EA;\n  stroke: #81B1DB;\n  stroke-width: 1px;\n}\n.arrowheadPath {\n  fill: lightgrey;\n}\n.edgePath .path {\n  stroke: lightgrey;\n}\n.edgeLabel {\n  background-color: #e8e8e8;\n}\n.cluster rect {\n  fill: #6D6D65 !important;\n  rx: 4 !important;\n  stroke: rgba(255, 255, 255, 0.25) !important;\n  stroke-width: 1px !important;\n}\n.cluster text {\n  fill: #F9FFFE;\n}\n.actor {\n  stroke: #81B1DB;\n  fill: #BDD5EA;\n}\ntext.actor {\n  fill: black;\n  stroke: none;\n}\n.actor-line {\n  stroke: lightgrey;\n}\n.messageLine0 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: lightgrey;\n}\n.messageLine1 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  stroke: lightgrey;\n}\n#arrowhead {\n  fill: lightgrey !important;\n}\n#crosshead path {\n  fill: lightgrey !important;\n  stroke: lightgrey !important;\n}\n.messageText {\n  fill: lightgrey;\n  stroke: none;\n}\n.labelBox {\n  stroke: #81B1DB;\n  fill: #BDD5EA;\n}\n.labelText {\n  fill: #323D47;\n  stroke: none;\n}\n.loopText {\n  fill: lightgrey;\n  stroke: none;\n}\n.loopLine {\n  stroke-width: 2;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #81B1DB;\n}\n.note {\n  stroke: rgba(255, 255, 255, 0.25);\n  fill: #fff5ad;\n}\n.noteText {\n  fill: black;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\n/** Section styling */\n.section {\n  stroke: none;\n  opacity: 0.2;\n}\n.section0 {\n  fill: rgba(255, 255, 255, 0.3);\n}\n.section2 {\n  fill: #EAE8B9;\n}\n.section1,\n.section3 {\n  fill: white;\n  opacity: 0.2;\n}\n.sectionTitle0 {\n  fill: #F9FFFE;\n}\n.sectionTitle1 {\n  fill: #F9FFFE;\n}\n.sectionTitle2 {\n  fill: #F9FFFE;\n}\n.sectionTitle3 {\n  fill: #F9FFFE;\n}\n.sectionTitle {\n  text-anchor: start;\n  font-size: 11px;\n  text-height: 14px;\n}\n/* Grid and axis */\n.grid .tick {\n  stroke: rgba(255, 255, 255, 0.3);\n  opacity: 0.3;\n  shape-rendering: crispEdges;\n}\n.grid .tick text {\n  fill: lightgrey;\n  opacity: 0.5;\n}\n.grid path {\n  stroke-width: 0;\n}\n/* Today line */\n.today {\n  fill: none;\n  stroke: #DB5757;\n  stroke-width: 2px;\n}\n/* Task styling */\n/* Default task */\n.task {\n  stroke-width: 1;\n}\n.taskText {\n  text-anchor: middle;\n  font-size: 11px;\n}\n.taskTextOutsideRight {\n  fill: #323D47;\n  text-anchor: start;\n  font-size: 11px;\n}\n.taskTextOutsideLeft {\n  fill: #323D47;\n  text-anchor: end;\n  font-size: 11px;\n}\n/* Specific task settings for the sections*/\n.taskText0,\n.taskText1,\n.taskText2,\n.taskText3 {\n  fill: #323D47;\n}\n.task0,\n.task1,\n.task2,\n.task3 {\n  fill: #BDD5EA;\n  stroke: rgba(255, 255, 255, 0.5);\n}\n.taskTextOutside0,\n.taskTextOutside2 {\n  fill: lightgrey;\n}\n.taskTextOutside1,\n.taskTextOutside3 {\n  fill: lightgrey;\n}\n/* Active task */\n.active0,\n.active1,\n.active2,\n.active3 {\n  fill: #81B1DB;\n  stroke: rgba(255, 255, 255, 0.5);\n}\n.activeText0,\n.activeText1,\n.activeText2,\n.activeText3 {\n  fill: #323D47 !important;\n}\n/* Completed task */\n.done0,\n.done1,\n.done2,\n.done3 {\n  fill: lightgrey;\n}\n.doneText0,\n.doneText1,\n.doneText2,\n.doneText3 {\n  fill: #323D47 !important;\n}\n/* Tasks on the critical line */\n.crit0,\n.crit1,\n.crit2,\n.crit3 {\n  stroke: #E83737;\n  fill: #E83737;\n  stroke-width: 2;\n}\n.activeCrit0,\n.activeCrit1,\n.activeCrit2,\n.activeCrit3 {\n  stroke: #E83737;\n  fill: #81B1DB;\n  stroke-width: 2;\n}\n.doneCrit0,\n.doneCrit1,\n.doneCrit2,\n.doneCrit3 {\n  stroke: #E83737;\n  fill: lightgrey;\n  stroke-width: 1;\n  cursor: pointer;\n  shape-rendering: crispEdges;\n}\n.doneCritText0,\n.doneCritText1,\n.doneCritText2,\n.doneCritText3 {\n  fill: lightgrey !important;\n}\n.activeCritText0,\n.activeCritText1,\n.activeCritText2,\n.activeCritText3 {\n  fill: #323D47 !important;\n}\n.titleText {\n  text-anchor: middle;\n  font-size: 18px;\n  fill: lightgrey;\n}\ng.classGroup text {\n  fill: purple;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 10px;\n}\ng.classGroup rect {\n  fill: #BDD5EA;\n  stroke: purple;\n}\ng.classGroup line {\n  stroke: purple;\n  stroke-width: 1;\n}\nsvg .classLabel .box {\n  stroke: none;\n  stroke-width: 0;\n  fill: #BDD5EA;\n  opacity: 0.5;\n}\nsvg .classLabel .label {\n  fill: purple;\n  font-size: 10px;\n}\n.relation {\n  stroke: purple;\n  stroke-width: 1;\n  fill: none;\n}\n.composition {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#compositionStart {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#compositionEnd {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n.aggregation {\n  fill: #BDD5EA;\n  stroke: purple;\n  stroke-width: 1;\n}\n#aggregationStart {\n  fill: #BDD5EA;\n  stroke: purple;\n  stroke-width: 1;\n}\n#aggregationEnd {\n  fill: #BDD5EA;\n  stroke: purple;\n  stroke-width: 1;\n}\n#dependencyStart {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#dependencyEnd {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#extensionStart {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n#extensionEnd {\n  fill: purple;\n  stroke: purple;\n  stroke-width: 1;\n}\n.commit-id,\n.commit-msg,\n.branch-label {\n  fill: lightgrey;\n  color: lightgrey;\n}\n.node text {\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\ndiv.mermaidTooltip {\n  position: absolute;\n  text-align: center;\n  max-width: 200px;\n  padding: 2px;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 12px;\n  background: #6D6D65;\n  border: 1px solid rgba(255, 255, 255, 0.25);\n  border-radius: 2px;\n  pointer-events: none;\n  z-index: 100;\n}\n", ""]);
 
 // exports
 
@@ -53684,6 +53590,100 @@ if(false) {
 /***/ }),
 
 /***/ 1669:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(563)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/* Flowchart variables */\n/* Sequence Diagram variables */\n/* Gantt chart variables */\n.mermaid .label {\n  color: #333;\n}\n.node rect,\n.node circle,\n.node ellipse,\n.node polygon {\n  fill: #ECECFF;\n  stroke: #CCCCFF;\n  stroke-width: 1px;\n}\n.arrowheadPath {\n  fill: #333333;\n}\n.edgePath .path {\n  stroke: #333333;\n}\n.edgeLabel {\n  background-color: #e8e8e8;\n}\n.cluster rect {\n  fill: #ffffde !important;\n  rx: 4 !important;\n  stroke: #aaaa33 !important;\n  stroke-width: 1px !important;\n}\n.cluster text {\n  fill: #333;\n}\n.actor {\n  stroke: #CCCCFF;\n  fill: #ECECFF;\n}\ntext.actor {\n  fill: black;\n  stroke: none;\n}\n.actor-line {\n  stroke: grey;\n}\n.messageLine0 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #333;\n}\n.messageLine1 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  stroke: #333;\n}\n#arrowhead {\n  fill: #333;\n}\n#crosshead path {\n  fill: #333 !important;\n  stroke: #333 !important;\n}\n.messageText {\n  fill: #333;\n  stroke: none;\n}\n.labelBox {\n  stroke: #CCCCFF;\n  fill: #ECECFF;\n}\n.labelText {\n  fill: black;\n  stroke: none;\n}\n.loopText {\n  fill: black;\n  stroke: none;\n}\n.loopLine {\n  stroke-width: 2;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #CCCCFF;\n}\n.note {\n  stroke: #aaaa33;\n  fill: #fff5ad;\n}\n.noteText {\n  fill: black;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\n/** Section styling */\n.section {\n  stroke: none;\n  opacity: 0.2;\n}\n.section0 {\n  fill: rgba(102, 102, 255, 0.49);\n}\n.section2 {\n  fill: #fff400;\n}\n.section1,\n.section3 {\n  fill: white;\n  opacity: 0.2;\n}\n.sectionTitle0 {\n  fill: #333;\n}\n.sectionTitle1 {\n  fill: #333;\n}\n.sectionTitle2 {\n  fill: #333;\n}\n.sectionTitle3 {\n  fill: #333;\n}\n.sectionTitle {\n  text-anchor: start;\n  font-size: 11px;\n  text-height: 14px;\n}\n/* Grid and axis */\n.grid .tick {\n  stroke: lightgrey;\n  opacity: 0.3;\n  shape-rendering: crispEdges;\n}\n.grid path {\n  stroke-width: 0;\n}\n/* Today line */\n.today {\n  fill: none;\n  stroke: red;\n  stroke-width: 2px;\n}\n/* Task styling */\n/* Default task */\n.task {\n  stroke-width: 2;\n}\n.taskText {\n  text-anchor: middle;\n  font-size: 11px;\n}\n.taskTextOutsideRight {\n  fill: black;\n  text-anchor: start;\n  font-size: 11px;\n}\n.taskTextOutsideLeft {\n  fill: black;\n  text-anchor: end;\n  font-size: 11px;\n}\n/* Specific task settings for the sections*/\n.taskText0,\n.taskText1,\n.taskText2,\n.taskText3 {\n  fill: white;\n}\n.task0,\n.task1,\n.task2,\n.task3 {\n  fill: #8a90dd;\n  stroke: #534fbc;\n}\n.taskTextOutside0,\n.taskTextOutside2 {\n  fill: black;\n}\n.taskTextOutside1,\n.taskTextOutside3 {\n  fill: black;\n}\n/* Active task */\n.active0,\n.active1,\n.active2,\n.active3 {\n  fill: #bfc7ff;\n  stroke: #534fbc;\n}\n.activeText0,\n.activeText1,\n.activeText2,\n.activeText3 {\n  fill: black !important;\n}\n/* Completed task */\n.done0,\n.done1,\n.done2,\n.done3 {\n  stroke: grey;\n  fill: lightgrey;\n  stroke-width: 2;\n}\n.doneText0,\n.doneText1,\n.doneText2,\n.doneText3 {\n  fill: black !important;\n}\n/* Tasks on the critical line */\n.crit0,\n.crit1,\n.crit2,\n.crit3 {\n  stroke: #ff8888;\n  fill: red;\n  stroke-width: 2;\n}\n.activeCrit0,\n.activeCrit1,\n.activeCrit2,\n.activeCrit3 {\n  stroke: #ff8888;\n  fill: #bfc7ff;\n  stroke-width: 2;\n}\n.doneCrit0,\n.doneCrit1,\n.doneCrit2,\n.doneCrit3 {\n  stroke: #ff8888;\n  fill: lightgrey;\n  stroke-width: 2;\n  cursor: pointer;\n  shape-rendering: crispEdges;\n}\n.doneCritText0,\n.doneCritText1,\n.doneCritText2,\n.doneCritText3 {\n  fill: black !important;\n}\n.activeCritText0,\n.activeCritText1,\n.activeCritText2,\n.activeCritText3 {\n  fill: black !important;\n}\n.titleText {\n  text-anchor: middle;\n  font-size: 18px;\n  fill: black;\n}\ng.classGroup text {\n  fill: #9370DB;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 10px;\n}\ng.classGroup rect {\n  fill: #ECECFF;\n  stroke: #9370DB;\n}\ng.classGroup line {\n  stroke: #9370DB;\n  stroke-width: 1;\n}\nsvg .classLabel .box {\n  stroke: none;\n  stroke-width: 0;\n  fill: #ECECFF;\n  opacity: 0.5;\n}\nsvg .classLabel .label {\n  fill: #9370DB;\n  font-size: 10px;\n}\n.relation {\n  stroke: #9370DB;\n  stroke-width: 1;\n  fill: none;\n}\n.composition {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#compositionStart {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#compositionEnd {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n.aggregation {\n  fill: #ECECFF;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#aggregationStart {\n  fill: #ECECFF;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#aggregationEnd {\n  fill: #ECECFF;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#dependencyStart {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#dependencyEnd {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#extensionStart {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n#extensionEnd {\n  fill: #9370DB;\n  stroke: #9370DB;\n  stroke-width: 1;\n}\n.node text {\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\ndiv.mermaidTooltip {\n  position: absolute;\n  text-align: center;\n  max-width: 200px;\n  padding: 2px;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 12px;\n  background: #ffffde;\n  border: 1px solid #aaaa33;\n  border-radius: 2px;\n  pointer-events: none;\n  z-index: 100;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 1670:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1671);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(564)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less", function() {
+			var newContent = require("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 1671:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(563)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/* Flowchart variables */\n/* Sequence Diagram variables */\n/* Gantt chart variables */\n.mermaid .label {\n  font-family: 'trebuchet ms', verdana, arial;\n  color: #333;\n}\n.node rect,\n.node circle,\n.node ellipse,\n.node polygon {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1px;\n}\n.arrowheadPath {\n  fill: green;\n}\n.edgePath .path {\n  stroke: green;\n  stroke-width: 1.5px;\n}\n.edgeLabel {\n  background-color: #e8e8e8;\n}\n.cluster rect {\n  fill: #cdffb2 !important;\n  rx: 4 !important;\n  stroke: #6eaa49 !important;\n  stroke-width: 1px !important;\n}\n.cluster text {\n  fill: #333;\n}\n.actor {\n  stroke: #13540c;\n  fill: #cde498;\n}\ntext.actor {\n  fill: black;\n  stroke: none;\n}\n.actor-line {\n  stroke: grey;\n}\n.messageLine0 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #333;\n}\n.messageLine1 {\n  stroke-width: 1.5;\n  stroke-dasharray: \"2 2\";\n  stroke: #333;\n}\n#arrowhead {\n  fill: #333;\n}\n#crosshead path {\n  fill: #333 !important;\n  stroke: #333 !important;\n}\n.messageText {\n  fill: #333;\n  stroke: none;\n}\n.labelBox {\n  stroke: #326932;\n  fill: #cde498;\n}\n.labelText {\n  fill: black;\n  stroke: none;\n}\n.loopText {\n  fill: black;\n  stroke: none;\n}\n.loopLine {\n  stroke-width: 2;\n  stroke-dasharray: \"2 2\";\n  marker-end: \"url(#arrowhead)\";\n  stroke: #326932;\n}\n.note {\n  stroke: #6eaa49;\n  fill: #fff5ad;\n}\n.noteText {\n  fill: black;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\n/** Section styling */\n.section {\n  stroke: none;\n  opacity: 0.2;\n}\n.section0 {\n  fill: #6eaa49;\n}\n.section2 {\n  fill: #6eaa49;\n}\n.section1,\n.section3 {\n  fill: white;\n  opacity: 0.2;\n}\n.sectionTitle0 {\n  fill: #333;\n}\n.sectionTitle1 {\n  fill: #333;\n}\n.sectionTitle2 {\n  fill: #333;\n}\n.sectionTitle3 {\n  fill: #333;\n}\n.sectionTitle {\n  text-anchor: start;\n  font-size: 11px;\n  text-height: 14px;\n}\n/* Grid and axis */\n.grid .tick {\n  stroke: lightgrey;\n  opacity: 0.3;\n  shape-rendering: crispEdges;\n}\n.grid path {\n  stroke-width: 0;\n}\n/* Today line */\n.today {\n  fill: none;\n  stroke: red;\n  stroke-width: 2px;\n}\n/* Task styling */\n/* Default task */\n.task {\n  stroke-width: 2;\n}\n.taskText {\n  text-anchor: middle;\n  font-size: 11px;\n}\n.taskTextOutsideRight {\n  fill: black;\n  text-anchor: start;\n  font-size: 11px;\n}\n.taskTextOutsideLeft {\n  fill: black;\n  text-anchor: end;\n  font-size: 11px;\n}\n/* Specific task settings for the sections*/\n.taskText0,\n.taskText1,\n.taskText2,\n.taskText3 {\n  fill: white;\n}\n.task0,\n.task1,\n.task2,\n.task3 {\n  fill: #487e3a;\n  stroke: #13540c;\n}\n.taskTextOutside0,\n.taskTextOutside2 {\n  fill: black;\n}\n.taskTextOutside1,\n.taskTextOutside3 {\n  fill: black;\n}\n/* Active task */\n.active0,\n.active1,\n.active2,\n.active3 {\n  fill: #cde498;\n  stroke: #13540c;\n}\n.activeText0,\n.activeText1,\n.activeText2,\n.activeText3 {\n  fill: black !important;\n}\n/* Completed task */\n.done0,\n.done1,\n.done2,\n.done3 {\n  stroke: grey;\n  fill: lightgrey;\n  stroke-width: 2;\n}\n.doneText0,\n.doneText1,\n.doneText2,\n.doneText3 {\n  fill: black !important;\n}\n/* Tasks on the critical line */\n.crit0,\n.crit1,\n.crit2,\n.crit3 {\n  stroke: #ff8888;\n  fill: red;\n  stroke-width: 2;\n}\n.activeCrit0,\n.activeCrit1,\n.activeCrit2,\n.activeCrit3 {\n  stroke: #ff8888;\n  fill: #cde498;\n  stroke-width: 2;\n}\n.doneCrit0,\n.doneCrit1,\n.doneCrit2,\n.doneCrit3 {\n  stroke: #ff8888;\n  fill: lightgrey;\n  stroke-width: 2;\n  cursor: pointer;\n  shape-rendering: crispEdges;\n}\n.doneCritText0,\n.doneCritText1,\n.doneCritText2,\n.doneCritText3 {\n  fill: black !important;\n}\n.activeCritText0,\n.activeCritText1,\n.activeCritText2,\n.activeCritText3 {\n  fill: black !important;\n}\n.titleText {\n  text-anchor: middle;\n  font-size: 18px;\n  fill: black;\n}\ng.classGroup text {\n  fill: #13540c;\n  stroke: none;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 10px;\n}\ng.classGroup rect {\n  fill: #cde498;\n  stroke: #13540c;\n}\ng.classGroup line {\n  stroke: #13540c;\n  stroke-width: 1;\n}\nsvg .classLabel .box {\n  stroke: none;\n  stroke-width: 0;\n  fill: #cde498;\n  opacity: 0.5;\n}\nsvg .classLabel .label {\n  fill: #13540c;\n  font-size: 10px;\n}\n.relation {\n  stroke: #13540c;\n  stroke-width: 1;\n  fill: none;\n}\n.composition {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#compositionStart {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#compositionEnd {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n.aggregation {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#aggregationStart {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#aggregationEnd {\n  fill: #cde498;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#dependencyStart {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#dependencyEnd {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#extensionStart {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n#extensionEnd {\n  fill: #13540c;\n  stroke: #13540c;\n  stroke-width: 1;\n}\n.node text {\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 14px;\n}\ndiv.mermaidTooltip {\n  position: absolute;\n  text-align: center;\n  max-width: 200px;\n  padding: 2px;\n  font-family: 'trebuchet ms', verdana, arial;\n  font-size: 12px;\n  background: #cdffb2;\n  border: 1px solid #6eaa49;\n  border-radius: 2px;\n  pointer-events: none;\n  z-index: 100;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 1672:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1673);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(564)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less", function() {
+			var newContent = require("!!../../../../css-loader/index.js!../../../../less-loader/dist/cjs.js!./mermaid.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 1673:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(563)(undefined);
