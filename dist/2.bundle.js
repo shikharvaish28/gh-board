@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 1442:
+/***/ 1451:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22,7 +22,7 @@ var _underscore2 = _interopRequireDefault(_underscore);
 
 var _reactOcticons = __webpack_require__(32);
 
-var _chart = __webpack_require__(1965);
+var _chart = __webpack_require__(1974);
 
 var _chart2 = _interopRequireDefault(_chart);
 
@@ -347,7 +347,7 @@ exports.default = BurnupShell;
 
 /***/ }),
 
-/***/ 1965:
+/***/ 1974:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -363,7 +363,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _c = __webpack_require__(1966);
+var _c = __webpack_require__(1975);
 
 var _c2 = _interopRequireDefault(_c);
 
@@ -467,7 +467,7 @@ exports.default = ChartComponent;
 
 /***/ }),
 
-/***/ 1966:
+/***/ 1975:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -1504,7 +1504,7 @@ function Chart(config) {
 
 function ChartInternal(api) {
     var $$ = this;
-    $$.d3 = window.d3 ? window.d3 :  true ? __webpack_require__(1967) : undefined;
+    $$.d3 = window.d3 ? window.d3 :  true ? __webpack_require__(1976) : undefined;
     $$.api = api;
     $$.config = $$.getDefaultConfig();
     $$.data = {};
@@ -9710,7 +9710,7 @@ return c3$1;
 
 /***/ }),
 
-/***/ 1967:
+/***/ 1976:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
