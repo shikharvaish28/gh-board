@@ -103,5 +103,10 @@
   },
   "engines": {
     "npm": "~5.8.0"
+  },
+  "ava": {
+    "files": [
+      "test/integration/**.js"
+	]
   }
 }
