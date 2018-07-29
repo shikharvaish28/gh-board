@@ -332,17 +332,33 @@ class ExamplesPanel extends Component {
 }
 
 
-let allMyReposHack = null;
-
 class DashboardShell extends Component {
   state = {repos: null};
 
+  componentDidMount() {
+    Client.on('changeToken', this.onChangeToken);
+    this.onChangeToken();
+  }
+
+  componentWillUnmount() {
+    Client.off('changeToken', this.onChangeToken);
+  }
+
+  onChangeToken = () => {
+    CurrentUserStore.fetchUser()
+    .then((currentUser) => {
+      if (currentUser) {
+        return Client.dbPromise().then(() => Client.getOcto().user.repos.fetchAll());
+      } else {
+        return []; // Anonymous has no repos
+      }
+    })
+    .then((allRepos) => this.setState({repos: allRepos}))
+    .catch(() => this.setState({repos: []}));
+  };
+
   render() {
     let {repos} = this.state;
-
-    // HACK to not keep re-fetching the user's list of repos
-    if (repos) { allMyReposHack = repos; }
-    else { repos = allMyReposHack; }
 
     let myRepos;
 
@@ -351,16 +367,6 @@ class DashboardShell extends Component {
         <Dashboard repos={repos}/>
       );
     } else {
-      CurrentUserStore.fetchUser()
-      .then((currentUser) => {
-        if (currentUser) {
-          return Client.dbPromise().then(() => Client.getOcto().user.repos.fetchAll());
-        } else {
-          return []; // Anonymous has no repos
-        }
-      })
-      .then((allRepos) => this.setState({repos: allRepos}))
-      .catch(() => this.setState({repos: []}));
       // TODO: Use Loadable component
       myRepos = (
         <span className='custom-loading is-loading'>
