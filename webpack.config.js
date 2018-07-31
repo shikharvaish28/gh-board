@@ -24,20 +24,10 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: [/node_modules/, /octokat\.js/],
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              'react',
-              'env'
-            ],
-            plugins: [
-              'react-require',
-              'transform-object-rest-spread',
-              'transform-class-properties'
-            ],
-          }
-        },
+        use: [
+          'babel-inline-import-loader',
+          'babel-loader',
+        ]
       },
       {
         test: /\.less$/,
