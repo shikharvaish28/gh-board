@@ -1,6 +1,7 @@
 import _ from 'underscore';
 import {EventEmitter} from 'events';
 
+import {getFilters, filterReviewsByFilter} from './route-utils';
 import SettingsStore from './settings-store';
 // import {filterCards} from './issue-store';
 
@@ -171,10 +172,10 @@ class Store extends EventEmitter {
     return sortedCards;
   }
 
-  filterAndSortReviews(reviews) {
-    // Sort the reviews by `lastEditedAt` and then
-    // by `createdAt` (if `lastEditedAt` does not exist)
-    let sortedReviews = reviews.map(review => {
+  filterAndSortReviews(reviews, login) {
+    const filter = getFilters();
+    const filteredReviews = filterReviewsByFilter(reviews, filter, login);
+    const sortedReviews = filteredReviews.map(review => {
       review.parsedUpdatedAt = Date.parse(review.updatedAt);
       return review;
     }).sort((a, b) => {

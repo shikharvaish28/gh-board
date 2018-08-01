@@ -30,9 +30,9 @@ var _database = __webpack_require__(79);
 
 var _database2 = _interopRequireDefault(_database);
 
-var _routeUtils = __webpack_require__(24);
+var _routeUtils = __webpack_require__(21);
 
-var _issueStore = __webpack_require__(36);
+var _issueStore = __webpack_require__(37);
 
 var _issueStore2 = _interopRequireDefault(_issueStore);
 

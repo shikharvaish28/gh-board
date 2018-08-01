@@ -21,9 +21,9 @@ var _underscore = __webpack_require__(25);
 
 var _underscore2 = _interopRequireDefault(_underscore);
 
-var _routeUtils = __webpack_require__(24);
+var _routeUtils = __webpack_require__(21);
 
-var _issueStore = __webpack_require__(36);
+var _issueStore = __webpack_require__(37);
 
 var _issueStore2 = _interopRequireDefault(_issueStore);
 
