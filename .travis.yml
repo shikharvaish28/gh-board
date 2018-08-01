@@ -26,6 +26,17 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
 
+before_install:
+  - npm install --no-save --no-optional --only=dev npm@5.8.0
+
+install:
+  - npm install --no-save --no-optional
+
+before_install:
+  # bufferstream in package-lock.json means optional dependencies
+  # have been included.
+  - if grep bufferstream package-lock.json ; then false; fi
+
 script:
   - script/build.sh
   - npm run test
