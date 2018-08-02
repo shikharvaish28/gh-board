@@ -32,12 +32,10 @@ before_install:
 install:
   - npm install --no-save --no-optional
 
-before_install:
+script:
   # bufferstream in package-lock.json means optional dependencies
   # have been included.
   - if grep bufferstream package-lock.json ; then false; fi
-
-script:
   - script/build.sh
   - npm run test
 
