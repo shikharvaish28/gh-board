@@ -6,6 +6,8 @@ import {
   GITHUB_PR_INFO_QUERY,
   GITHUB_LABEL_INFO_QUERY,
   GITHUB_REACTION_INFO_QUERY,
+  GITHUB_REACTION_ADD_MUTATION,
+  GITHUB_REACTION_REMOVE_MUTATION,
 } from '../script/queries';
 
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -146,6 +148,48 @@ class GraphQLClient {
     // number of comments to fetch per pull request
     this.commentsCount = comments_count || 20;
     return this;
+  }
+
+  // first type of mutations: add reaction
+  // return boolean value indicating result of action
+  async addReaction({id, content}) {
+    if (DEBUG) {
+      console.log('add reaction for id', id, 'with content', content);
+    }
+    let data, errors;
+    try {
+      ({ data, errors } = await this.client.query(
+        GITHUB_REACTION_ADD_MUTATION,
+        {id, content}
+      ));
+    } catch (error) {
+      return {result: false, msg: error};
+    }
+    if (!data || errors) {
+      return {result: false, msg: errors};
+    }
+    return {result: true, msg: data};
+  }
+
+  // second type of mutations: remove reaction
+  // return boolean value indicating result of action
+  async removeReaction({id, content}) {
+    if (DEBUG) {
+      console.log('remove reaction for id', id, 'with content', content);
+    }
+    let data, errors;
+    try {
+      ({ data, errors } = await this.client.query(
+        GITHUB_REACTION_REMOVE_MUTATION,
+        {id, content}
+      ));
+    } catch (error) {
+      return {result: false, msg: error};
+    }
+    if (!data || errors) {
+      return {result: false, msg: errors};
+    }
+    return {result: true, msg: data};
   }
 
   async fetchAll(config) {

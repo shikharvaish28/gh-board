@@ -1,6 +1,10 @@
 import renderer from 'react-test-renderer';
 import Reactions from '../../../src/components/reactions';
 
+jest.mock('../../../src/github-client', () => ({
+  getGraphQLClient: jest.fn(() => {}),
+}));
+
 it('does not display number zero', () => {
   const stat = {
     THUMBS_UP: 0,
