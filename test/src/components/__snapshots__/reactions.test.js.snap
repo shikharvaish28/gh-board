@@ -3,7 +3,7 @@
 exports[`does not display number zero 1`] = `
 Array [
   <button
-    className="btn btn-xs btn-default"
+    className="reaction-btn reaction-btn-default"
     disabled={false}
     type="button"
   >
@@ -11,7 +11,7 @@ Array [
      
   </button>,
   <button
-    className="btn btn-xs btn-default"
+    className="reaction-btn reaction-btn-default"
     disabled={false}
     type="button"
   >
@@ -19,7 +19,7 @@ Array [
      
   </button>,
   <button
-    className="btn btn-xs btn-default"
+    className="reaction-btn reaction-btn-default"
     disabled={false}
     type="button"
   >
@@ -27,7 +27,7 @@ Array [
      
   </button>,
   <button
-    className="btn btn-xs btn-default"
+    className="reaction-btn reaction-btn-default"
     disabled={false}
     type="button"
   >
@@ -35,7 +35,7 @@ Array [
      
   </button>,
   <button
-    className="btn btn-xs btn-default"
+    className="reaction-btn reaction-btn-default"
     disabled={false}
     type="button"
   >
@@ -43,7 +43,7 @@ Array [
      
   </button>,
   <button
-    className="btn btn-xs btn-default"
+    className="reaction-btn reaction-btn-default"
     disabled={false}
     type="button"
   >

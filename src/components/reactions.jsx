@@ -36,7 +36,7 @@ function Reactions({stat}) {
     }
   ];
   return reactions.map(reaction => (
-      <BS.Button key={reaction.name} bsSize="xsmall">
+      <BS.Button bsClass="reaction-btn">
         {reaction.emoji} {reaction.count}
       </BS.Button>
   ));
