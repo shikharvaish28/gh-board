@@ -25,13 +25,13 @@ if (isDeployPreview) {
 // review will be ignored if it's written by any author specified here
 // delimiter: space
 const ignoreAuthor = process.env.IGNORE_REVIEW_AUTHOR ||
-  'gitmate-bot rultor';
+  'gitmate-bot rultor TravisBuddy';
 
 // review will be ignored if it matches any string specified here
 // it can be a literal or a regular expression
 // delimiter: space
 const ignoreContent = process.env.IGNORE_REVIEW_CONTENT ||
-  '@gitmate-bot @rultor /^(unack|ack)/g';
+  '@gitmate-bot @rultor ^(unack|ack)';
 
 // Need to instantiate a new object every time, since it doesn't
 // support concurrency
