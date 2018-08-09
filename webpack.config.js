@@ -18,7 +18,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   context: path.resolve(__dirname),
-  devtool: isBuild ? false : 'source-map',
+  devtool: isBuild ? 'source-map' : 'cheap-module-source-map',
   module: {
     rules: [
       {
@@ -65,6 +65,8 @@ module.exports = {
       REPOSITORIES: JSON.stringify(process.env['REPOSITORIES']),
     }),
     new ExtractTextPlugin('app.css'),
-    new UglifyJsPlugin()
+    new UglifyJsPlugin({
+      sourceMap: true,
+    })
   ] : []
 };
