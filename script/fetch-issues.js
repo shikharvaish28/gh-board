@@ -50,7 +50,7 @@ const repoOwner = repo.split(':')[0];
 const repoNames = repo.substring(repo.indexOf(':') + 1).split('|');
 
 console.log('Fetching data for', repoOwner, repoNames);
-
+console.log('Hello');
 async function fetchIssues(owner, names) {
   let result = [];
   const config = {earliestDate};
